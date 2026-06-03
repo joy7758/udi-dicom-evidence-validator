@@ -42,6 +42,8 @@ class ValidationReceipt:
     inputs: dict[str, Any]
     registry: dict[str, Any]
     artifacts: dict[str, Any]
+    trace_id: str | None
+    provenance: dict[str, Any]
     warnings: list[str]
     claims_boundary: list[str]
 

@@ -1,0 +1,80 @@
+{
+  "$id": "https://example.org/schema/udi-dicom-validation-receipt-v0.2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifacts": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "claims_boundary": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "ok": {
+      "type": "boolean"
+    },
+    "primary_error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "profile_version": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "receipt_id": {
+      "type": "string"
+    },
+    "registry": {
+      "type": "object"
+    },
+    "trace_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "validator_version": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "receipt_id",
+    "generated_at",
+    "validator_version",
+    "profile_version",
+    "ok",
+    "manifest_id",
+    "primary_error_code",
+    "checks",
+    "inputs",
+    "registry",
+    "artifacts",
+    "warnings",
+    "claims_boundary",
+    "trace_id",
+    "provenance"
+  ],
+  "title": "UDI-DICOM Validation Receipt v0.2.0",
+  "type": "object"
+}

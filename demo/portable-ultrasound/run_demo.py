@@ -12,13 +12,13 @@ from udi_dicom_validator.report import render_report  # noqa: E402
 
 
 def main() -> None:
-    examples = ROOT / "examples" / "public"
-    artifacts = Path(__file__).resolve().parent / "artifacts"
+    examples = ROOT / "examples" / "public" / "v0.2"
+    artifacts = Path(__file__).resolve().parent / "artifacts_v0.2"
     artifacts.mkdir(parents=True, exist_ok=True)
     receipt = validate_files(
-        examples / "manifest.pass.json",
-        examples / "sample_dicom_metadata.pass.json",
-        examples / "registry.fixture.resolved.json",
+        examples / "manifest_v0.2.pass.json",
+        examples / "sample_dicom_metadata_v0.2.pass.json",
+        examples / "registry.fixture_v0.2.resolved.json",
     )
     (artifacts / "receipt.json").write_text(
         json.dumps(receipt, indent=2, sort_keys=True) + "\n",

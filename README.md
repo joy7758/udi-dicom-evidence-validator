@@ -57,3 +57,17 @@ is not the regulatory UDI-DI. The UDI string is carried through the DICOM UDI
 Macro, including `Unique Device Identifier (0018,1009)` inside `UDI Sequence
 (0018,100A)`. This project checks evidence consistency; it does not establish
 medical, legal, regulatory, or safety conclusions.
+
+
+## v0.2 Profile
+
+The v0.2 public profile adds synthetic workflow trace ids, receipt provenance,
+and optional metadata-only FDO-style mapping fields. Run the v0.2 demo with:
+
+```bash
+python demo/portable-ultrasound/run_demo.py
+python -m json.tool demo/portable-ultrasound/artifacts_v0.2/receipt.json
+```
+
+These fields are synthetic review metadata only and do not create clinical,
+regulatory, certification, or production FDO claims.

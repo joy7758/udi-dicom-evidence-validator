@@ -10,7 +10,7 @@ from .schema_loader import load_schema
 
 app = FastAPI(
     title="UDI-DICOM Evidence Validator",
-    version="0.1.0",
+    version="0.2.0",
     description="Public-only validation API. Not clinical validation or regulatory approval.",
 )
 
@@ -22,12 +22,16 @@ def healthz() -> dict[str, str]:
 
 @app.get("/v1/profile")
 def profile() -> dict[str, str]:
-    return {"profile_name": "udi-dicom-evidence-manifest", "profile_version": "v0.1.0"}
+    return {
+        "profile_name": "udi-dicom-evidence-manifest",
+        "profile_version": "v0.2.0",
+        "supported_versions": "v0.1.0,v0.2.0",
+    }
 
 
 @app.get("/v1/schema")
 def schema() -> dict[str, Any]:
-    return load_schema("udi-dicom-evidence-manifest-v0.1.schema.json")
+    return load_schema("udi-dicom-evidence-manifest-v0.2.schema.json")
 
 
 @app.get("/v1/examples")
@@ -39,6 +43,10 @@ def examples() -> dict[str, list[str]]:
             "manifest.fail_wrong_sop_uid.json",
             "manifest.fail_registry_unresolved.json",
             "manifest.fail_device_uid_used_as_udi_di.json",
+            "v0.2/manifest_v0.2.pass.json",
+            "v0.2/manifest_v0.2.fail_missing_udi.json",
+            "v0.2/manifest_v0.2.fail_registry_unresolved.json",
+            "v0.2/manifest_v0.2.fail_device_uid_used_as_udi_di.json",
         ]
     }
 

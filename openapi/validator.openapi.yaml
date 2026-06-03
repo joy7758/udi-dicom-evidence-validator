@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
   title: UDI-DICOM Evidence Validator
-  version: 0.1.0
-  description: Public-only validation API; not clinical validation or regulatory approval.
+  version: 0.2.0
+  description: Public-only validation API for v0.1/v0.2 manifests; not clinical validation or regulatory approval.
 paths:
   /healthz:
     get:
@@ -13,12 +13,12 @@ paths:
     get:
       responses:
         '200':
-          description: Profile metadata
+          description: Latest profile metadata and supported versions
   /v1/schema:
     get:
       responses:
         '200':
-          description: Manifest schema
+          description: Latest v0.2 manifest schema
   /v1/examples:
     get:
       responses:
@@ -30,7 +30,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Deterministic validation receipt
+          description: Deterministic validation receipt with v0.2 trace_id/provenance when supplied
   /v1/validate/dicom-metadata:
     post:
       requestBody:

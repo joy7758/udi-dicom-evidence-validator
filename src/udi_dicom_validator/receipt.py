@@ -28,6 +28,8 @@ PRIMARY_ERROR_PRIORITY = [
     "registry_timeout",
     "registry_model_mismatch",
     "registry_company_mismatch",
+    "trace_id_mismatch",
+    "fdo_mapping_mismatch",
 ]
 
 
@@ -73,6 +75,10 @@ def build_receipt(
         "registry": registry,
         "checks": [check.to_dict() for check in checks],
     }
+    trace_id = manifest.get("synthetic_workflow_trace_id") or manifest.get("trace_id")
+    provenance = dict(manifest.get("provenance") or {})
+    if trace_id and "workflow_trace_id" not in provenance:
+        provenance["workflow_trace_id"] = trace_id
     receipt = ValidationReceipt(
         receipt_id=f"receipt-{canonical_hash(payload_for_id)[:16]}",
         generated_at=generated_at,
@@ -95,6 +101,8 @@ def build_receipt(
             "summary": registry,
         },
         artifacts=manifest.get("artifact_hashes", {}),
+        trace_id=trace_id,
+        provenance=provenance,
         warnings=warnings or [],
         claims_boundary=CLAIMS_BOUNDARY,
     )

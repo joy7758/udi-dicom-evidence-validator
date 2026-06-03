@@ -27,8 +27,17 @@ def load_schema(name: str) -> dict[str, Any]:
     return json.loads(resource.read_text(encoding="utf-8"))
 
 
+def manifest_schema_name(manifest: dict[str, Any]) -> str:
+    profile_version = manifest.get("profile_version", "v0.1.0")
+    if profile_version == "v0.2.0":
+        return "udi-dicom-evidence-manifest-v0.2.schema.json"
+    if profile_version == "v0.1.0":
+        return "udi-dicom-evidence-manifest-v0.1.schema.json"
+    raise SchemaValidationError(f"profile_version: unsupported version {profile_version!r}")
+
+
 def validate_manifest_schema(manifest: dict[str, Any]) -> None:
-    schema = load_schema("udi-dicom-evidence-manifest-v0.1.schema.json")
+    schema = load_schema(manifest_schema_name(manifest))
     validator = Draft202012Validator(schema)
     errors = sorted(validator.iter_errors(manifest), key=lambda error: list(error.path))
     if errors:

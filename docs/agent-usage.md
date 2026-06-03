@@ -7,3 +7,8 @@ sync. Safe commands are `pytest -q`, `ruff check .`, and
 Forbidden edits include adding patient data, private suite cases, real hospital
 samples, clinical or regulatory claims, vendor-private rules, or treating Device
 UID as UDI-DI.
+
+
+## v0.2 Notes
+
+When editing v0.2, keep `synthetic_workflow_trace_id`, `provenance`, optional `fdo_mapping`, schema, examples, tests, CLI, and API behavior synchronized.

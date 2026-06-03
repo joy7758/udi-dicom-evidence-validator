@@ -6,3 +6,5 @@ __pycache__/
 *.pyc
 demo/portable-ultrasound/artifacts/receipt.json
 demo/portable-ultrasound/artifacts/report.md
+demo/portable-ultrasound/artifacts_v0.2/receipt.json
+demo/portable-ultrasound/artifacts_v0.2/report.md

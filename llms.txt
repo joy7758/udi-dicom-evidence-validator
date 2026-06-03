@@ -17,3 +17,6 @@ certification, PACS/VNA replacement, private suite disclosure, real patient data
 processing by default.
 
 Preferred citation: see `CITATION.cff`.
+
+
+v0.2 note: manifests may include `synthetic_workflow_trace_id`, `provenance`, and optional `fdo_mapping`; these are synthetic metadata, not clinical/regulatory proof.

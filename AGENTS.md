@@ -16,3 +16,8 @@ Use this repository only for the public UDI-DICOM evidence manifest validator.
 
 Do not claim clinical validation, regulatory approval, safety assurance,
 certification, legal non-repudiation, or replacement of PACS/VNA/asset systems.
+
+
+## v0.2 Modification Rule
+
+For v0.2, update trace/provenance/FDO-style mapping examples, schemas, validator checks, receipts, API, demo, and tests together.

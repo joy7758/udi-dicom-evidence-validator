@@ -4,18 +4,27 @@ import json
 
 from jsonschema import Draft202012Validator
 
-from tests.conftest import EXAMPLES
-from udi_dicom_validator.schema_loader import load_schema
+from tests.conftest import EXAMPLES, EXAMPLES_V02
+from udi_dicom_validator.schema_loader import load_schema, manifest_schema_name
 
 
 def test_examples_parse_as_json() -> None:
     for path in EXAMPLES.glob("*.json"):
         json.loads(path.read_text(encoding="utf-8"))
+    for path in EXAMPLES_V02.glob("*.json"):
+        json.loads(path.read_text(encoding="utf-8"))
 
 
 def test_manifest_examples_match_schema() -> None:
-    schema = load_schema("udi-dicom-evidence-manifest-v0.1.schema.json")
-    validator = Draft202012Validator(schema)
     for path in EXAMPLES.glob("manifest.*.json"):
-        errors = sorted(validator.iter_errors(json.loads(path.read_text())), key=str)
+        data = json.loads(path.read_text())
+        schema = load_schema(manifest_schema_name(data))
+        validator = Draft202012Validator(schema)
+        errors = sorted(validator.iter_errors(data), key=str)
+        assert errors == []
+    for path in EXAMPLES_V02.glob("manifest_v0.2.*.json"):
+        data = json.loads(path.read_text())
+        schema = load_schema(manifest_schema_name(data))
+        validator = Draft202012Validator(schema)
+        errors = sorted(validator.iter_errors(data), key=str)
         assert errors == []

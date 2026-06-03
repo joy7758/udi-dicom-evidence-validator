@@ -1,0 +1,18 @@
+{
+  "brand_name": null,
+  "commercial_distribution_status": "synthetic-active",
+  "company_name": null,
+  "fdo_mapping_summary": {
+    "profile_pid": "synthetic:udi-dicom-evidence:v0.2.0",
+    "resolver_hint": "synthetic://udi-dicom/v0.2/profile"
+  },
+  "lookup_status": "unresolved",
+  "lookup_timestamp": "2026-06-04T00:00:00Z",
+  "parsed_udi_di": "12345678901234",
+  "registry_jurisdiction": "US",
+  "registry_provider": "openFDA",
+  "source": "synthetic-fixture-v0.2-not-live",
+  "synthetic_workflow_trace_id": "trace-v02-portable-ultrasound-001",
+  "trace_id": "trace-v02-portable-ultrasound-001",
+  "version_or_model_number": null
+}

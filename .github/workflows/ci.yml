@@ -16,4 +16,4 @@ jobs:
       - run: ruff check .
       - run: pytest -q
       - run: python demo/portable-ultrasound/run_demo.py
-      - run: python -m json.tool demo/portable-ultrasound/artifacts/receipt.json
+      - run: python -m json.tool demo/portable-ultrasound/artifacts_v0.2/receipt.json

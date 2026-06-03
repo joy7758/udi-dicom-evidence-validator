@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "udi-dicom-evidence-validator"
-version = "0.1.0"
+version = "0.2.0"
 description = "Minimal synthetic UDI-DICOM evidence manifest validator"
 readme = "README.md"
 requires-python = ">=3.11"

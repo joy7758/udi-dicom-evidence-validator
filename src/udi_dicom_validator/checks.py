@@ -34,6 +34,46 @@ def _check_evidence_items(manifest: dict[str, Any]) -> bool:
     return True
 
 
+def _v02_trace_id(manifest: dict[str, Any]) -> str | None:
+    return manifest.get("synthetic_workflow_trace_id") or manifest.get("trace_id")
+
+
+def _validate_v02_trace_and_mapping(
+    manifest: dict[str, Any],
+    registry: dict[str, Any],
+) -> CheckResult | None:
+    if manifest.get("profile_version") != "v0.2.0":
+        return None
+    trace_id = _v02_trace_id(manifest)
+    provenance_trace = (manifest.get("provenance") or {}).get("workflow_trace_id")
+    registry_trace = registry.get("synthetic_workflow_trace_id") or registry.get("trace_id")
+    if provenance_trace and trace_id and provenance_trace != trace_id:
+        return CheckResult(
+            "trace_id_consistency",
+            "fail",
+            "trace_id_mismatch",
+            "Manifest trace id and provenance workflow trace id differ.",
+        )
+    if registry_trace and trace_id and registry_trace != trace_id:
+        return CheckResult(
+            "trace_id_consistency",
+            "fail",
+            "trace_id_mismatch",
+            "Manifest trace id and registry trace id differ.",
+        )
+    fdo_mapping = manifest.get("fdo_mapping") or {}
+    if fdo_mapping:
+        profile_pid = fdo_mapping.get("profile_pid")
+        if profile_pid and not str(profile_pid).endswith("v0.2.0"):
+            return CheckResult(
+                "fdo_mapping_consistency",
+                "fail",
+                "fdo_mapping_mismatch",
+                "FDO-style mapping profile_pid does not match v0.2.0.",
+            )
+    return None
+
+
 def validate_dicts(
     manifest: dict[str, Any],
     dicom_metadata: dict[str, Any],
@@ -214,6 +254,28 @@ def validate_dicts(
         )
         return build_receipt(manifest, dicom, registry, checks, warnings)
     checks.append(CheckResult("registry_resolution", "pass", None, "Registry fixture resolved."))
+    v02_result = _validate_v02_trace_and_mapping(manifest, registry)
+    if v02_result and v02_result.status == "fail":
+        checks.append(v02_result)
+        return build_receipt(manifest, dicom, registry, checks, warnings)
+    if manifest.get("profile_version") == "v0.2.0":
+        checks.append(
+            CheckResult(
+                "trace_id_consistency",
+                "pass",
+                None,
+                "Synthetic workflow trace id is consistent.",
+                {"trace_id": _v02_trace_id(manifest)},
+            )
+        )
+        checks.append(
+            CheckResult(
+                "fdo_mapping_consistency",
+                "pass",
+                None,
+                "Optional FDO-style mapping is internally consistent.",
+            )
+        )
     return build_receipt(manifest, dicom, registry, checks, warnings)
 
 

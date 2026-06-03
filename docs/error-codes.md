@@ -23,3 +23,6 @@
 | registry_resolution | registry_timeout | Registry lookup timed out. |
 | registry_resolution | registry_model_mismatch | Registry model does not match. |
 | registry_resolution | registry_company_mismatch | Registry company does not match. |
+
+| v0.2 | trace_id_mismatch | Manifest, provenance, or registry trace id differs. |
+| v0.2 | fdo_mapping_mismatch | Optional FDO-style mapping is internally inconsistent. |

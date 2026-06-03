@@ -1,0 +1,203 @@
+{
+  "$id": "https://example.org/schema/udi-dicom-evidence-manifest-v0.2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifact_hashes": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "device_uid": {
+      "type": "string"
+    },
+    "evidence_items": {
+      "items": {
+        "properties": {
+          "declared_hash": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "uri"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "fdo": {
+      "type": "object"
+    },
+    "fdo_mapping": {
+      "additionalProperties": true,
+      "properties": {
+        "artifact_relation": {
+          "type": "string"
+        },
+        "kernel_metadata_profile": {
+          "type": "string"
+        },
+        "metadata_persistence": {
+          "type": "string"
+        },
+        "object_type": {
+          "type": "string"
+        },
+        "profile_pid": {
+          "type": "string"
+        },
+        "resolver_hint": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "full_udi": {
+      "type": "string"
+    },
+    "issuing_agency": {
+      "type": "string"
+    },
+    "lookup_status": {
+      "enum": [
+        "resolved",
+        "unresolved",
+        "timeout",
+        "error",
+        "not_requested"
+      ],
+      "type": "string"
+    },
+    "lookup_timestamp": {
+      "type": "string"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "parsed_udi_di": {
+      "type": "string"
+    },
+    "parsed_udi_pi": {
+      "type": "object"
+    },
+    "profile_name": {
+      "type": "string"
+    },
+    "profile_version": {
+      "const": "v0.2.0"
+    },
+    "provenance": {
+      "additionalProperties": true,
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "generated_by": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "synthetic_data": {
+          "type": "boolean"
+        },
+        "workflow_trace_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "generated_by",
+        "synthetic_data",
+        "workflow_trace_id"
+      ],
+      "type": "object"
+    },
+    "registry_jurisdiction": {
+      "type": "string"
+    },
+    "registry_provider": {
+      "type": "string"
+    },
+    "registry_result_summary": {
+      "type": "object"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "series_instance_uid": {
+      "type": "string"
+    },
+    "sop_instance_uid": {
+      "type": "string"
+    },
+    "study_instance_uid": {
+      "type": "string"
+    },
+    "synthetic_workflow_trace_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "validation_status": {
+      "enum": [
+        "pending",
+        "pass",
+        "warn",
+        "fail"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "profile_name",
+    "profile_version",
+    "manifest_id",
+    "sop_instance_uid",
+    "study_instance_uid",
+    "series_instance_uid",
+    "full_udi",
+    "issuing_agency",
+    "parsed_udi_di",
+    "parsed_udi_pi",
+    "registry_provider",
+    "registry_jurisdiction",
+    "lookup_timestamp",
+    "lookup_status",
+    "registry_result_summary",
+    "manufacturer",
+    "model_name",
+    "serial_number",
+    "device_uid",
+    "evidence_items",
+    "manifest_sha256",
+    "artifact_hashes",
+    "validation_status",
+    "checks",
+    "synthetic_workflow_trace_id",
+    "provenance"
+  ],
+  "title": "UDI-DICOM Evidence Manifest v0.2.0",
+  "type": "object"
+}

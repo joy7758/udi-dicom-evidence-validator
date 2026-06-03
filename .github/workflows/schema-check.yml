@@ -1,0 +1,15 @@
+name: schema-check
+on: [push, pull_request]
+jobs:
+  schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m json.tool schema/udi-dicom-evidence-manifest-v0.1.schema.json
+      - run: python -m json.tool schema/udi-dicom-validation-receipt-v0.1.schema.json
+      - run: for f in examples/public/*.json; do python -m json.tool "$f"; done
+      - run: pip install -e '.[dev]'
+      - run: pytest -q tests/test_schema_examples.py

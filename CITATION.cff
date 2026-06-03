@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this synthetic UDI-DICOM evidence validator, cite it as below."
+title: "UDI-DICOM Evidence Validator"
+version: "0.1.0"
+authors:
+  - family-names: "Zhang"
+    given-names: "Bin"
+date-released: "2026-06-04"
+license: "MIT"

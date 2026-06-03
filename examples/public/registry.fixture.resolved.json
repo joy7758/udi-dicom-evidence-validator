@@ -1,0 +1,12 @@
+{
+  "brand_name": "Synthetic Portable Ultrasound",
+  "commercial_distribution_status": "synthetic-active",
+  "company_name": "Acme Imaging Devices",
+  "lookup_status": "resolved",
+  "lookup_timestamp": "2026-06-04T00:00:00Z",
+  "parsed_udi_di": "12345678901234",
+  "registry_jurisdiction": "US",
+  "registry_provider": "openFDA",
+  "source": "synthetic-fixture-not-live",
+  "version_or_model_number": "AID-US-100"
+}

@@ -1,0 +1,56 @@
+{
+  "artifact_hashes": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [],
+  "device_uid": "1.2.826.0.1.3680043.10.900.2.1",
+  "evidence_items": [
+    {
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "type": "acceptance_checklist",
+      "uri": "synthetic://acceptance-checklist"
+    },
+    {
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "type": "calibration_report",
+      "uri": "synthetic://calibration-report"
+    },
+    {
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "type": "registry_lookup_result",
+      "uri": "synthetic://registry-lookup-result"
+    }
+  ],
+  "fdo": {
+    "kernel_information_profile": "metadata-only",
+    "profile_pid": "synthetic:udi-dicom-evidence:v0.1.0"
+  },
+  "full_udi": "(01)12345678901234(10)LOT123(21)SER123",
+  "issuing_agency": "GS1",
+  "lookup_status": "unresolved",
+  "lookup_timestamp": "2026-06-04T00:00:00Z",
+  "manifest_id": "synthetic-portable-ultrasound-pass-001",
+  "manifest_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+  "manufacturer": "Acme Imaging Devices",
+  "model_name": "AID-US-100",
+  "parsed_udi_di": "12345678901234",
+  "parsed_udi_pi": {
+    "lot": "LOT123",
+    "serial": "SER123"
+  },
+  "profile_name": "udi-dicom-evidence-manifest",
+  "profile_version": "v0.1.0",
+  "registry_jurisdiction": "US",
+  "registry_provider": "openFDA",
+  "registry_result_summary": {
+    "brand_name": "Synthetic Portable Ultrasound",
+    "company_name": "Acme Imaging Devices",
+    "source": "synthetic-fixture-not-live",
+    "version_or_model_number": "AID-US-100"
+  },
+  "serial_number": "SYN-SERIAL-0001",
+  "series_instance_uid": "1.2.826.0.1.3680043.10.900.1.2",
+  "sop_instance_uid": "1.2.826.0.1.3680043.10.900.1.1",
+  "study_instance_uid": "1.2.826.0.1.3680043.10.900.1",
+  "validation_status": "pending"
+}

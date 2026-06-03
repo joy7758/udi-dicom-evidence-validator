@@ -1,0 +1,19 @@
+Project: UDI-DICOM Evidence Validator
+
+Purpose: validate a minimal synthetic UDI-DICOM evidence manifest and produce a
+deterministic receipt and Markdown report.
+
+Primary files: `spec/`, `schema/`, `examples/public/`, `src/udi_dicom_validator/`,
+`tests/`, `demo/portable-ultrasound/`.
+
+Quickstart: install with `pip install -e '.[dev,api]'`, run `pytest -q`, then
+`python demo/portable-ultrasound/run_demo.py`.
+
+Allowed claims: deterministic public evidence consistency checks for synthetic
+or de-identified metadata, offline registry fixture review, public demo.
+
+Disallowed claims: clinical validation, regulatory approval, safety assurance,
+certification, PACS/VNA replacement, private suite disclosure, real patient data
+processing by default.
+
+Preferred citation: see `CITATION.cff`.

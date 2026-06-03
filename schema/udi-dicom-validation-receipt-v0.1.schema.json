@@ -1,0 +1,69 @@
+{
+  "$id": "https://example.org/schema/udi-dicom-validation-receipt-v0.1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifacts": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "claims_boundary": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "ok": {
+      "type": "boolean"
+    },
+    "primary_error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "profile_version": {
+      "type": "string"
+    },
+    "receipt_id": {
+      "type": "string"
+    },
+    "registry": {
+      "type": "object"
+    },
+    "validator_version": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "receipt_id",
+    "generated_at",
+    "validator_version",
+    "profile_version",
+    "ok",
+    "manifest_id",
+    "primary_error_code",
+    "checks",
+    "inputs",
+    "registry",
+    "artifacts",
+    "warnings",
+    "claims_boundary"
+  ],
+  "title": "UDI-DICOM Validation Receipt v0.1.0",
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "device_uid": "1.2.826.0.1.3680043.10.900.2.1",
+  "manufacturer": "Acme Imaging Devices",
+  "model_name": "AID-US-100",
+  "serial_number": "SYN-SERIAL-0001",
+  "series_instance_uid": "1.2.826.0.1.3680043.10.900.1.2",
+  "sop_instance_uid": "1.2.826.0.1.3680043.10.900.1.1",
+  "study_instance_uid": "1.2.826.0.1.3680043.10.900.1",
+  "udi_sequence": [
+    {
+      "device_description": "Synthetic portable ultrasound unit",
+      "unique_device_identifier": "(01)12345678901234(10)LOT123(21)SER123"
+    }
+  ]
+}

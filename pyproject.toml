@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "udi-dicom-evidence-validator"
+version = "0.1.0"
+description = "Minimal synthetic UDI-DICOM evidence manifest validator"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Bin Zhang" }]
+dependencies = [
+  "jsonschema>=4.22",
+  "pydicom>=2.4",
+  "requests>=2.31",
+  "typer>=0.12",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5", "mypy>=1.10"]
+api = ["fastapi>=0.111", "uvicorn>=0.30"]
+
+[project.scripts]
+udi-dicom-validate = "udi_dicom_validator.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+strict = false
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/udi_dicom_validator"]

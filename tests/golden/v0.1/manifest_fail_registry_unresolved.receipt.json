@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [
+    {
+      "code": null,
+      "evidence": {
+        "parsed_udi_di": "12345678901234"
+      },
+      "message": "UDI is present and minimally parseable.",
+      "stage": "presence_parseability",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "References are closed.",
+      "stage": "reference_closure",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "Metadata matches.",
+      "stage": "cross_layer_consistency",
+      "status": "pass"
+    },
+    {
+      "code": "registry_unresolved",
+      "evidence": {},
+      "message": "Registry did not resolve the UDI-DI.",
+      "stage": "registry_resolution",
+      "status": "fail"
+    }
+  ],
+  "claims_boundary": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety assurance",
+    "not certification",
+    "not medical decision support"
+  ],
+  "generated_at": "2026-06-04T00:00:00Z",
+  "inputs": {
+    "dicom_metadata_sha256": "9210162b4529527600f2af776fa7e75d4c6d1a9c031a9353bc8a9f506b427ec3",
+    "manifest_sha256": "40ac1458934dca717f3649655ef57409c86df88f1dce86f0f33d27e0b5047dfc"
+  },
+  "manifest_id": "synthetic-portable-ultrasound-pass-001",
+  "ok": false,
+  "primary_error_code": "registry_unresolved",
+  "profile_version": "v0.1.0",
+  "provenance": {},
+  "receipt_id": "receipt-98b8a913ee518804",
+  "registry": {
+    "jurisdiction": "US",
+    "lookup_status": "unresolved",
+    "provider": "openFDA",
+    "summary": {
+      "brand_name": null,
+      "commercial_distribution_status": null,
+      "company_name": null,
+      "lookup_status": "unresolved",
+      "lookup_timestamp": "2026-06-04T00:00:00Z",
+      "parsed_udi_di": "12345678901234",
+      "registry_jurisdiction": "US",
+      "registry_provider": "openFDA",
+      "source": "synthetic-fixture-not-live",
+      "version_or_model_number": null
+    }
+  },
+  "trace_id": null,
+  "validation_status": "fail",
+  "validator_version": "0.2.0",
+  "warnings": []
+}

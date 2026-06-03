@@ -20,3 +20,8 @@ Preferred citation: see `CITATION.cff`.
 
 
 v0.2 note: manifests may include `synthetic_workflow_trace_id`, `provenance`, and optional `fdo_mapping`; these are synthetic metadata, not clinical/regulatory proof.
+
+v0.3 note: use `scripts/generate_golden_receipts.py`,
+`scripts/check_golden_receipts.py`, and
+`scripts/build_public_evaluation_matrix.py` for reproducible public checks. The
+MCP skeleton is public-only and read-only.

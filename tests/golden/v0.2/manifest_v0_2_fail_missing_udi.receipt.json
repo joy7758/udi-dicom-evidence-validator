@@ -1,0 +1,65 @@
+{
+  "artifacts": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [
+    {
+      "code": "missing_udi",
+      "evidence": {},
+      "message": "UDI is missing.",
+      "stage": "presence_parseability",
+      "status": "fail"
+    }
+  ],
+  "claims_boundary": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety assurance",
+    "not certification",
+    "not medical decision support"
+  ],
+  "generated_at": "2026-06-04T00:00:00Z",
+  "inputs": {
+    "dicom_metadata_sha256": "9210162b4529527600f2af776fa7e75d4c6d1a9c031a9353bc8a9f506b427ec3",
+    "manifest_sha256": "0060d2673cc1ff6bc8ef2aab36a53bc3e9bd3707731229a9a23a42074d7ff08c"
+  },
+  "manifest_id": "synthetic-portable-ultrasound-v02-fail-missing-udi",
+  "ok": false,
+  "primary_error_code": "missing_udi",
+  "profile_version": "v0.2.0",
+  "provenance": {
+    "created_at": "2026-06-04T00:00:00Z",
+    "generated_by": "udi-dicom-evidence-validator-v0.2",
+    "source": "synthetic-public-v0.2-fixture",
+    "synthetic_data": true,
+    "workflow_trace_id": "trace-v02-portable-ultrasound-001"
+  },
+  "receipt_id": "receipt-c88b77785a3bee77",
+  "registry": {
+    "jurisdiction": "US",
+    "lookup_status": "resolved",
+    "provider": "openFDA",
+    "summary": {
+      "brand_name": "Synthetic Portable Ultrasound",
+      "commercial_distribution_status": "synthetic-active",
+      "company_name": "Acme Imaging Devices",
+      "fdo_mapping_summary": {
+        "profile_pid": "synthetic:udi-dicom-evidence:v0.2.0",
+        "resolver_hint": "synthetic://udi-dicom/v0.2/profile"
+      },
+      "lookup_status": "resolved",
+      "lookup_timestamp": "2026-06-04T00:00:00Z",
+      "parsed_udi_di": "12345678901234",
+      "registry_jurisdiction": "US",
+      "registry_provider": "openFDA",
+      "source": "synthetic-fixture-v0.2-not-live",
+      "synthetic_workflow_trace_id": "trace-v02-portable-ultrasound-001",
+      "trace_id": "trace-v02-portable-ultrasound-001",
+      "version_or_model_number": "AID-US-100"
+    }
+  },
+  "trace_id": "trace-v02-portable-ultrasound-001",
+  "validation_status": "fail",
+  "validator_version": "0.2.0",
+  "warnings": []
+}

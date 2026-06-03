@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [
+    {
+      "code": null,
+      "evidence": {
+        "parsed_udi_di": "12345678901234"
+      },
+      "message": "UDI is present and minimally parseable.",
+      "stage": "presence_parseability",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "References are closed.",
+      "stage": "reference_closure",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "Metadata matches.",
+      "stage": "cross_layer_consistency",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "Registry fixture resolved.",
+      "stage": "registry_resolution",
+      "status": "pass"
+    }
+  ],
+  "claims_boundary": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety assurance",
+    "not certification",
+    "not medical decision support"
+  ],
+  "generated_at": "2026-06-04T00:00:00Z",
+  "inputs": {
+    "dicom_metadata_sha256": "9210162b4529527600f2af776fa7e75d4c6d1a9c031a9353bc8a9f506b427ec3",
+    "manifest_sha256": "2ebe2373620475a5439b5bd807f1400d54776c39fd9789384a7d8ae689a4cd56"
+  },
+  "manifest_id": "synthetic-portable-ultrasound-pass-001",
+  "ok": true,
+  "primary_error_code": null,
+  "profile_version": "v0.1.0",
+  "provenance": {},
+  "receipt_id": "receipt-ee5c701c3a64e2c2",
+  "registry": {
+    "jurisdiction": "US",
+    "lookup_status": "resolved",
+    "provider": "openFDA",
+    "summary": {
+      "brand_name": "Synthetic Portable Ultrasound",
+      "commercial_distribution_status": "synthetic-active",
+      "company_name": "Acme Imaging Devices",
+      "lookup_status": "resolved",
+      "lookup_timestamp": "2026-06-04T00:00:00Z",
+      "parsed_udi_di": "12345678901234",
+      "registry_jurisdiction": "US",
+      "registry_provider": "openFDA",
+      "source": "synthetic-fixture-not-live",
+      "version_or_model_number": "AID-US-100"
+    }
+  },
+  "trace_id": null,
+  "validation_status": "pass",
+  "validator_version": "0.2.0",
+  "warnings": []
+}

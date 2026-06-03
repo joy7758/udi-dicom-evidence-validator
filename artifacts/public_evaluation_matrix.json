@@ -1,0 +1,86 @@
+{
+  "row_count": 9,
+  "rows": [
+    {
+      "actual_primary_error_code": "device_uid_used_as_udi_di",
+      "expected_primary_error_code": "device_uid_used_as_udi_di",
+      "fixture_used": "examples/public/registry.fixture.resolved.json",
+      "manifest": "examples/public/manifest.fail_device_uid_used_as_udi_di.json",
+      "ok": false,
+      "profile_version": "v0.1.0",
+      "validation_stage": "presence_parseability"
+    },
+    {
+      "actual_primary_error_code": "missing_udi",
+      "expected_primary_error_code": "missing_udi",
+      "fixture_used": "examples/public/registry.fixture.resolved.json",
+      "manifest": "examples/public/manifest.fail_missing_udi.json",
+      "ok": false,
+      "profile_version": "v0.1.0",
+      "validation_stage": "presence_parseability"
+    },
+    {
+      "actual_primary_error_code": "registry_unresolved",
+      "expected_primary_error_code": "registry_unresolved",
+      "fixture_used": "examples/public/registry.fixture.unresolved.json",
+      "manifest": "examples/public/manifest.fail_registry_unresolved.json",
+      "ok": false,
+      "profile_version": "v0.1.0",
+      "validation_stage": "registry_resolution"
+    },
+    {
+      "actual_primary_error_code": "sop_uid_mismatch",
+      "expected_primary_error_code": "sop_uid_mismatch",
+      "fixture_used": "examples/public/registry.fixture.resolved.json",
+      "manifest": "examples/public/manifest.fail_wrong_sop_uid.json",
+      "ok": false,
+      "profile_version": "v0.1.0",
+      "validation_stage": "reference_closure"
+    },
+    {
+      "actual_primary_error_code": null,
+      "expected_primary_error_code": null,
+      "fixture_used": "examples/public/registry.fixture.resolved.json",
+      "manifest": "examples/public/manifest.pass.json",
+      "ok": true,
+      "profile_version": "v0.1.0",
+      "validation_stage": "all_passed"
+    },
+    {
+      "actual_primary_error_code": "device_uid_used_as_udi_di",
+      "expected_primary_error_code": "device_uid_used_as_udi_di",
+      "fixture_used": "examples/public/v0.2/registry.fixture_v0.2.resolved.json",
+      "manifest": "examples/public/v0.2/manifest_v0.2.fail_device_uid_used_as_udi_di.json",
+      "ok": false,
+      "profile_version": "v0.2.0",
+      "validation_stage": "presence_parseability"
+    },
+    {
+      "actual_primary_error_code": "missing_udi",
+      "expected_primary_error_code": "missing_udi",
+      "fixture_used": "examples/public/v0.2/registry.fixture_v0.2.resolved.json",
+      "manifest": "examples/public/v0.2/manifest_v0.2.fail_missing_udi.json",
+      "ok": false,
+      "profile_version": "v0.2.0",
+      "validation_stage": "presence_parseability"
+    },
+    {
+      "actual_primary_error_code": "registry_unresolved",
+      "expected_primary_error_code": "registry_unresolved",
+      "fixture_used": "examples/public/v0.2/registry.fixture_v0.2.unresolved.json",
+      "manifest": "examples/public/v0.2/manifest_v0.2.fail_registry_unresolved.json",
+      "ok": false,
+      "profile_version": "v0.2.0",
+      "validation_stage": "registry_resolution"
+    },
+    {
+      "actual_primary_error_code": null,
+      "expected_primary_error_code": null,
+      "fixture_used": "examples/public/v0.2/registry.fixture_v0.2.resolved.json",
+      "manifest": "examples/public/v0.2/manifest_v0.2.pass.json",
+      "ok": true,
+      "profile_version": "v0.2.0",
+      "validation_stage": "all_passed"
+    }
+  ]
+}

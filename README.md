@@ -71,3 +71,10 @@ python -m json.tool demo/portable-ultrasound/artifacts_v0.2/receipt.json
 
 These fields are synthetic review metadata only and do not create clinical,
 regulatory, certification, or production FDO claims.
+
+## v0.3 Release Hardening
+
+v0.3 adds golden receipt regression, a public evaluation matrix, release
+artifact inventory, and a public-only MCP skeleton. These are reproducibility and
+agent-readability surfaces only. Private conformance cases and real samples stay
+outside this repository.

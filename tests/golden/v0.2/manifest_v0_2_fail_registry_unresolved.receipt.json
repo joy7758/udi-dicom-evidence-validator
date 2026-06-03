@@ -1,0 +1,88 @@
+{
+  "artifacts": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [
+    {
+      "code": null,
+      "evidence": {
+        "parsed_udi_di": "12345678901234"
+      },
+      "message": "UDI is present and minimally parseable.",
+      "stage": "presence_parseability",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "References are closed.",
+      "stage": "reference_closure",
+      "status": "pass"
+    },
+    {
+      "code": null,
+      "evidence": {},
+      "message": "Metadata matches.",
+      "stage": "cross_layer_consistency",
+      "status": "pass"
+    },
+    {
+      "code": "registry_unresolved",
+      "evidence": {},
+      "message": "Registry did not resolve the UDI-DI.",
+      "stage": "registry_resolution",
+      "status": "fail"
+    }
+  ],
+  "claims_boundary": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety assurance",
+    "not certification",
+    "not medical decision support"
+  ],
+  "generated_at": "2026-06-04T00:00:00Z",
+  "inputs": {
+    "dicom_metadata_sha256": "9210162b4529527600f2af776fa7e75d4c6d1a9c031a9353bc8a9f506b427ec3",
+    "manifest_sha256": "6a3cb54fdc5b8a1cd2967d59b2ce5b39cc9b9d5cf395979c6ffccf082be06b16"
+  },
+  "manifest_id": "synthetic-portable-ultrasound-v02-fail-registry-unresolved",
+  "ok": false,
+  "primary_error_code": "registry_unresolved",
+  "profile_version": "v0.2.0",
+  "provenance": {
+    "created_at": "2026-06-04T00:00:00Z",
+    "generated_by": "udi-dicom-evidence-validator-v0.2",
+    "source": "synthetic-public-v0.2-fixture",
+    "synthetic_data": true,
+    "workflow_trace_id": "trace-v02-portable-ultrasound-001"
+  },
+  "receipt_id": "receipt-b59e46f205195b41",
+  "registry": {
+    "jurisdiction": "US",
+    "lookup_status": "unresolved",
+    "provider": "openFDA",
+    "summary": {
+      "brand_name": null,
+      "commercial_distribution_status": "synthetic-active",
+      "company_name": null,
+      "fdo_mapping_summary": {
+        "profile_pid": "synthetic:udi-dicom-evidence:v0.2.0",
+        "resolver_hint": "synthetic://udi-dicom/v0.2/profile"
+      },
+      "lookup_status": "unresolved",
+      "lookup_timestamp": "2026-06-04T00:00:00Z",
+      "parsed_udi_di": "12345678901234",
+      "registry_jurisdiction": "US",
+      "registry_provider": "openFDA",
+      "source": "synthetic-fixture-v0.2-not-live",
+      "synthetic_workflow_trace_id": "trace-v02-portable-ultrasound-001",
+      "trace_id": "trace-v02-portable-ultrasound-001",
+      "version_or_model_number": null
+    }
+  },
+  "trace_id": "trace-v02-portable-ultrasound-001",
+  "validation_status": "fail",
+  "validator_version": "0.2.0",
+  "warnings": []
+}

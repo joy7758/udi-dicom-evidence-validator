@@ -28,3 +28,9 @@ assurance, or production deployment. Never expose private assets.
 ## v0.2 Workflow
 
 Keep `synthetic_workflow_trace_id`, `provenance`, and optional `fdo_mapping` deterministic. Add tests for trace and FDO mapping consistency when behavior changes.
+
+## v0.3 Workflow
+
+Regenerate `tests/golden/` receipts, run `scripts/check_golden_receipts.py`, run
+`scripts/build_public_evaluation_matrix.py`, and verify that public MCP tools
+only read public examples and public docs.

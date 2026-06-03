@@ -1,0 +1,53 @@
+{
+  "artifacts": {
+    "metadata": "4444444444444444444444444444444444444444444444444444444444444444"
+  },
+  "checks": [
+    {
+      "code": "missing_udi",
+      "evidence": {},
+      "message": "UDI is missing.",
+      "stage": "presence_parseability",
+      "status": "fail"
+    }
+  ],
+  "claims_boundary": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety assurance",
+    "not certification",
+    "not medical decision support"
+  ],
+  "generated_at": "2026-06-04T00:00:00Z",
+  "inputs": {
+    "dicom_metadata_sha256": "9210162b4529527600f2af776fa7e75d4c6d1a9c031a9353bc8a9f506b427ec3",
+    "manifest_sha256": "9a5b73b842b35d4f27f3693621e2d482fb97432c40b33dcdf81304832dd39be5"
+  },
+  "manifest_id": "synthetic-portable-ultrasound-pass-001",
+  "ok": false,
+  "primary_error_code": "missing_udi",
+  "profile_version": "v0.1.0",
+  "provenance": {},
+  "receipt_id": "receipt-d9636934cccf212a",
+  "registry": {
+    "jurisdiction": "US",
+    "lookup_status": "resolved",
+    "provider": "openFDA",
+    "summary": {
+      "brand_name": "Synthetic Portable Ultrasound",
+      "commercial_distribution_status": "synthetic-active",
+      "company_name": "Acme Imaging Devices",
+      "lookup_status": "resolved",
+      "lookup_timestamp": "2026-06-04T00:00:00Z",
+      "parsed_udi_di": "12345678901234",
+      "registry_jurisdiction": "US",
+      "registry_provider": "openFDA",
+      "source": "synthetic-fixture-not-live",
+      "version_or_model_number": "AID-US-100"
+    }
+  },
+  "trace_id": null,
+  "validation_status": "fail",
+  "validator_version": "0.2.0",
+  "warnings": []
+}

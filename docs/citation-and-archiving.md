@@ -31,3 +31,9 @@ official FDO implementation.
 v0.6 adds an archive metadata report and DOI readiness checklist. These outputs
 are DOI-ready review material only. They do not claim an assigned DOI, and they
 exclude private suite and private service material from public DOI scope.
+
+v0.8 adds a DOI archive review package, no-fake-DOI scan, paper finalization
+bundle, and citation metadata consistency gate. The state remains DOI pending
+until Zenodo or another archive service returns a real record URL and DOI.
+Public DOI scope is the public validator only; private suite and private service
+materials are excluded from public DOI assets.

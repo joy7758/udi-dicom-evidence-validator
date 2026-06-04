@@ -24,3 +24,8 @@ v0.6 adds `paper/submission/` for journal-neutral submission readiness. These
 drafts keep references requiring human confirmation in
 `paper/references-to-check.md` and do not bind the manuscript to a specific
 journal.
+
+v0.8 adds a paper finalization bundle and DOI archive readiness gate. It keeps
+title, target journal, final abstract, reference verification, figure rendering,
+and DOI insertion as explicit human-review items. DOI insertion is blocked until
+a real archive record exists.

@@ -2,9 +2,9 @@
   "asset_count": 54,
   "assets": [
     {
-      "bytes": 2649,
+      "bytes": 3275,
       "path": "artifacts/public-release/AGENTS.md",
-      "sha256": "ad11c2a440c768ecd347549899177df1028b2ccfa270a4ddfcf77a59e9937a78"
+      "sha256": "c6114f52270843fbbffc6afd81977a1085b0c1f08aa5a8319c393d7b4050f420"
     },
     {
       "bytes": 548,
@@ -22,14 +22,14 @@
       "sha256": "8287c3a5ea75211d545152d07e0e23ba233891e82e021ed15ba8e9573a175b19"
     },
     {
-      "bytes": 5509,
+      "bytes": 6391,
       "path": "artifacts/public-release/README.md",
-      "sha256": "7615b1f39043950784e483a3fc842e74332114e977a69f0eb87cdc11d07bf93a"
+      "sha256": "fbb1733817679b7053305ed28472186ecd12adb9fb2e19ea9779d086abc8157d"
     },
     {
       "bytes": 4901,
       "path": "artifacts/public-release/SHA256SUMS.txt",
-      "sha256": "7c1125efa790988b139a18d36dd2447e46ec4b5d801ad42b636e1cdad88eb2f6"
+      "sha256": "924c166c718fb1e6344b849d0a4fa1bd936c30c3921f02d883e484b0b1bbbe42"
     },
     {
       "bytes": 3404,
@@ -42,9 +42,9 @@
       "sha256": "03f7b08f5ea1b66a773c1be5ec7ca4186600b631ad530c3a24f5c516bf9087da"
     },
     {
-      "bytes": 1426,
+      "bytes": 1785,
       "path": "artifacts/public-release/docs/citation-and-archiving.md",
-      "sha256": "cb1b47b751e91eab16266e3ce6778a8b2e5a004eb0c546b59317bfbc33cb5796"
+      "sha256": "8912ba6fa85f7458b78a4c5e54903e83c7060569c3e91c3a4afdb065bf49da28"
     },
     {
       "bytes": 545,
@@ -72,9 +72,9 @@
       "sha256": "a9b6a2aba9a32aae3fbfd37cdbd9a1efc65571feb32e34d1a0152bd17bebd8a4"
     },
     {
-      "bytes": 990,
+      "bytes": 1342,
       "path": "artifacts/public-release/docs/index.md",
-      "sha256": "679dbf07488256aeefbd65b0ecc19ccc4c2aaf079aab99c47d55ef97375ea5d2"
+      "sha256": "7df3f8c9cc8f6e93fbb202595cf0d23bf92e19a2508a89099df4bd39a0324a5c"
     },
     {
       "bytes": 761,
@@ -152,14 +152,14 @@
       "sha256": "cd0f89b553ac2727497a7e0a39634c47e219c841209217c71d50af8a0d50d91c"
     },
     {
-      "bytes": 2490,
+      "bytes": 2856,
       "path": "artifacts/public-release/llms.txt",
-      "sha256": "ff498f869e8275861c0d45e368ade8f0d10d32f8f20c94fc86692229491ffa8c"
+      "sha256": "81b3cd57c8cd659f3e0eeba74932df6bafdef86150bb4a2bbeeedb4a0dba700d"
     },
     {
-      "bytes": 1027,
+      "bytes": 1299,
       "path": "artifacts/public-release/paper/README.md",
-      "sha256": "8e955b8ec7ece7ba286081af9ca9b9c68d28c18aa090979a228ac057ece24b8f"
+      "sha256": "7c2f96b17f44c79ad1a0bd5b6cd50bd9bafb383f2205da2866a582f1d6c705f8"
     },
     {
       "bytes": 920,
@@ -267,9 +267,9 @@
       "sha256": "54a8c9f8ad4d30a246f079d0b183a03f92f3ff7d5e8b64fe1d33a8931a8bde91"
     },
     {
-      "bytes": 58433,
+      "bytes": 61290,
       "path": "artifacts/public-release/udi-dicom-evidence-validator-public-worktree-source.zip",
-      "sha256": "3db66a111d6933ebc0ed88b0f68231799dccc130eb810b8c13805bd56c6a0c2c"
+      "sha256": "885b324e0acfd49fb4fff41ac7e0d8198693b65ada7d60d5c7159657a4911c0a"
     }
   ],
   "public_only": true,

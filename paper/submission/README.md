@@ -17,3 +17,7 @@ The package does not claim clinical validation, regulatory approval,
 certification, real sample handling, or official FDO implementation. References
 that need human confirmation remain in `paper/references-to-check.md`.
 
+v0.8 adds DOI archive readiness and paper finalization support through
+`artifacts/paper-finalization-bundle-v0.8/`. This does not submit the paper,
+does not generate Word or PDF files, does not fabricate references, and does not
+write a DOI before a verified archive record exists.

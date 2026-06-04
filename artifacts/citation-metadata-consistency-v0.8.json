@@ -1,0 +1,37 @@
+{
+  "allowed_doi_references": [
+    "10.5063/schema/codemeta-2.0"
+  ],
+  "author": "Bin Zhang",
+  "boundary": [
+    "public validator only",
+    "no PHI",
+    "no raw DICOM",
+    "not clinical validation",
+    "not regulatory approval",
+    "not certification",
+    "no fake DOI"
+  ],
+  "checks": {
+    "author_consistent": true,
+    "doi_not_fabricated": true,
+    "doi_pending_wording_present": true,
+    "license_consistent": true,
+    "public_repo_only": true,
+    "repository_url_consistent": true,
+    "title_consistent": true,
+    "version_explainable": true
+  },
+  "claimed_or_placeholder_dois": [],
+  "doi_status": "DOI pending",
+  "license": "MIT",
+  "ok": true,
+  "report_version": "v0.8",
+  "repository_url": "https://github.com/joy7758/udi-dicom-evidence-validator",
+  "title": "UDI-DICOM Evidence Validator",
+  "version_values": {
+    "citation_cff": "0.4.0",
+    "codemeta": "0.4.0",
+    "pyproject": "0.2.0"
+  }
+}

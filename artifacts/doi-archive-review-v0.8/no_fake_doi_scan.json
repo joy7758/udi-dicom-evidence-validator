@@ -1,0 +1,18 @@
+{
+  "allowed_doi_references": [
+    "10.5063/schema/codemeta-2.0"
+  ],
+  "doi_policy": "DOI-ready and DOI pending are allowed; real DOI claims require verification.",
+  "files_checked": 100,
+  "hits": [],
+  "ok": true,
+  "targets": [
+    "README.md",
+    "docs",
+    "paper",
+    "release",
+    "CITATION.cff",
+    "codemeta.json",
+    ".zenodo.json"
+  ]
+}

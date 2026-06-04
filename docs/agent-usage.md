@@ -12,3 +12,12 @@ UID as UDI-DI.
 ## v0.2 Notes
 
 When editing v0.2, keep `synthetic_workflow_trace_id`, `provenance`, optional `fdo_mapping`, schema, examples, tests, CLI, and API behavior synchronized.
+
+## v0.4 Notes
+
+Release hardening agents should use `scripts/verify_remote_release.py`,
+`scripts/clean_clone_smoke.py`, and `scripts/build_public_release_assets.py`.
+The public asset builder must remain public-only and must not include private
+suite, private service, raw DICOM, PHI, or real sample materials. External
+review docs must keep the reference-validator boundary: not clinical validation,
+not regulatory approval, and not certification.

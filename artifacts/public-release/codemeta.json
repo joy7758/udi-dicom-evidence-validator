@@ -1,0 +1,27 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "UDI-DICOM Evidence Validator",
+  "version": "0.4.0",
+  "description": "Public reference validator for synthetic UDI-DICOM evidence manifest workflows.",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/joy7758/udi-dicom-evidence-validator",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11+",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Bin",
+      "familyName": "Zhang"
+    }
+  ],
+  "keywords": [
+    "UDI-DICOM",
+    "evidence manifest",
+    "medical-device imaging workflow",
+    "synthetic validation fixture"
+  ],
+  "isAccessibleForFree": true,
+  "developmentStatus": "active",
+  "readme": "https://github.com/joy7758/udi-dicom-evidence-validator/blob/main/README.md"
+}

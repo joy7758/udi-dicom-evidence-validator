@@ -22,3 +22,10 @@ Forbidden private or real-sample tools:
 All tool functions are restricted to public examples, public schemas, and public
 error-code documentation. They must not access PHI, private conformance cases, or
 real customer samples.
+
+## v0.4 Boundary
+
+Remote release verification and public release asset building are outside the
+MCP skeleton. MCP helper functions remain local, public-only, and read-only.
+They must not call private repositories, clean clone smoke tests, GitHub release
+upload commands, live openFDA lookup, or any real-sample workflow.

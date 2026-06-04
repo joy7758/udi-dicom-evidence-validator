@@ -76,7 +76,10 @@ def build_source_zip() -> Path:
         for relative in sorted(PUBLIC_FILES):
             source = ROOT / relative
             if source.exists():
-                archive.write(source, f"udi-dicom-evidence-validator/{relative}")
+                info = zipfile.ZipInfo(f"udi-dicom-evidence-validator/{relative}")
+                info.date_time = (2026, 6, 4, 0, 0, 0)
+                info.external_attr = 0o644 << 16
+                archive.writestr(info, source.read_bytes())
     return output
 
 

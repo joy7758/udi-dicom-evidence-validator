@@ -1,5 +1,6 @@
 {
   "baseline_public_tag": "v0.7.0-public",
+  "baseline_public_tag_target": "47f1a96befa16dc4e1723bde35995a6ec0f268db",
   "boundary": [
     "no PHI",
     "no raw DICOM",
@@ -13,7 +14,6 @@
     "no robot operation evidence"
   ],
   "current_branch": "v0.8-doi-archive-readiness",
-  "current_head": "47f1a96befa16dc4e1723bde35995a6ec0f268db",
   "doi_claimed": false,
   "doi_status": "DOI pending",
   "github_release_required_after_enablement": true,

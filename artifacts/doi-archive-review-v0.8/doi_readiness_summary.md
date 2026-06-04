@@ -3,7 +3,8 @@
 Status: `DOI_ARCHIVE_READY_PENDING_ZENODO_ENABLEMENT`
 Public repository: `https://github.com/joy7758/udi-dicom-evidence-validator`
 Current branch: `v0.8-doi-archive-readiness`
-Current HEAD: `47f1a96befa16dc4e1723bde35995a6ec0f268db`
+Baseline public tag: `v0.7.0-public`
+Baseline public tag target: `47f1a96befa16dc4e1723bde35995a6ec0f268db`
 DOI claimed: `false`
 Zenodo record URL: none
 

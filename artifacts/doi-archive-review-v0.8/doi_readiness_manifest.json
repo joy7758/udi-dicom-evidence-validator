@@ -13,7 +13,6 @@
     "FDO-style mapping only",
     "no robot operation evidence"
   ],
-  "current_branch": "v0.8-doi-archive-readiness",
   "doi_claimed": false,
   "doi_status": "DOI pending",
   "github_release_required_after_enablement": true,

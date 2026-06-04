@@ -6,7 +6,11 @@ import sys
 from pathlib import Path
 
 from scripts.build_public_release_assets import OUT, assert_public_safe
-from scripts.verify_remote_release import is_public_safe_asset, parse_ls_remote
+from scripts.verify_remote_release import (
+    is_public_safe_asset,
+    normalize_repo_url,
+    parse_ls_remote,
+)
 from tests.conftest import ROOT
 
 
@@ -24,6 +28,17 @@ def test_public_asset_allowlist_rejects_private_markers() -> None:
     assert is_public_safe_asset("public_evaluation_matrix.json")
     assert not is_public_safe_asset("private-regression-baseline.json")
     assert not is_public_safe_asset("sample.dcm")
+
+
+def test_normalize_repo_url_accepts_github_checkout_forms() -> None:
+    assert (
+        normalize_repo_url("https://github.com/joy7758/udi-dicom-evidence-validator.git")
+        == "https://github.com/joy7758/udi-dicom-evidence-validator"
+    )
+    assert (
+        normalize_repo_url("https://github.com/joy7758/udi-dicom-evidence-validator/")
+        == "https://github.com/joy7758/udi-dicom-evidence-validator"
+    )
 
 
 def test_build_public_release_assets(tmp_path: Path) -> None:

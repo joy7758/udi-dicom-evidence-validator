@@ -69,6 +69,13 @@ def is_public_safe_asset(name: str) -> bool:
     return name in PUBLIC_ASSET_ALLOWLIST
 
 
+def normalize_repo_url(url: str) -> str:
+    normalized = url.strip().rstrip("/")
+    if normalized.endswith(".git"):
+        normalized = normalized[:-4]
+    return normalized
+
+
 def gh_release_assets(repo: str, tag: str) -> list[str]:
     result = run_command(
         [
@@ -105,11 +112,13 @@ def verify(repo: str, release_tag: str, inventory_tag: str) -> dict[str, Any]:
     assets = gh_release_assets(repo, release_tag)
     unsafe_assets = [name for name in assets if not is_public_safe_asset(name)]
     missing_assets = sorted(PUBLIC_ASSET_ALLOWLIST - set(assets))
-    expected_origin = f"https://github.com/{repo}.git"
+    expected_origin = f"https://github.com/{repo}"
+    normalized_origin = normalize_repo_url(origin.stdout)
 
     checks = {
         "origin_url": origin.stdout,
-        "origin_matches_repo": origin.stdout == expected_origin,
+        "origin_matches_repo": normalized_origin == expected_origin,
+        "expected_origin_url": expected_origin,
         "remote_main": head_refs.get("refs/heads/main"),
         "local_origin_main": (
             local_origin_main.stdout if local_origin_main.returncode == 0 else None

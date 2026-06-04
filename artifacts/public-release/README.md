@@ -13,6 +13,20 @@ This is not clinical validation, not regulatory approval, not safety assurance,
 not certification, and not a replacement for PACS, VNA, asset management, or
 manufacturer quality systems. Public examples are synthetic and contain no PHI.
 
+## Project plan / 项目总方案
+
+本仓库实现 UDI-DICOM（Unique Device Identification–Digital Imaging and
+Communications in Medicine，唯一器械标识—医学数字成像与通信）医疗设备影像工作流最小证据清单与验证器。
+
+公开安全版总方案维护在：
+https://github.com/joy7758/agent-evidence/blob/main/docs/medical-imaging-traceability/udi-dicom-total-plan-public.md
+
+该总方案包含 project positioning（project positioning，项目定位）、public layer
+（public layer，公开层）、controlled layer（controlled layer，受控层）、service layer
+（service layer，服务层）、minimal manifest fields（minimal manifest fields，最小证据清单字段）、
+reference validator logic（reference validator logic，参考验证器逻辑）和 boundary statements
+（boundary statements，边界声明）。
+
 ## Who Needs This Validator?
 
 This public reference validator is useful when teams need a reproducible,

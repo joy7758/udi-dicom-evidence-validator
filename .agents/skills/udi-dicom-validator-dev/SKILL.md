@@ -34,3 +34,12 @@ Keep `synthetic_workflow_trace_id`, `provenance`, and optional `fdo_mapping` det
 Regenerate `tests/golden/` receipts, run `scripts/check_golden_receipts.py`, run
 `scripts/build_public_evaluation_matrix.py`, and verify that public MCP tools
 only read public examples and public docs.
+
+## v0.4 Workflow
+
+For release hardening, run `scripts/build_public_release_assets.py`,
+`scripts/verify_remote_release.py`, and, when network access is available,
+`scripts/clean_clone_smoke.py`. Keep release assets public-only. Do not expose
+private suite or private service materials. Archive metadata is DOI-ready only
+and must not claim an assigned DOI before Zenodo or another archive service
+assigns one.

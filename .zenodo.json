@@ -1,0 +1,28 @@
+{
+  "title": "UDI-DICOM Evidence Validator",
+  "upload_type": "software",
+  "description": "Public reference validator for synthetic UDI-DICOM evidence manifest workflows.",
+  "creators": [
+    {
+      "name": "Zhang, Bin",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "UDI-DICOM",
+    "evidence manifest",
+    "medical-device imaging workflow",
+    "synthetic validation fixture",
+    "DICOM",
+    "UDI"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/joy7758/udi-dicom-evidence-validator",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "DOI-ready metadata only. This software does not provide clinical validation, regulatory approval, certification, or PHI processing."
+}

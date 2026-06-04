@@ -1,0 +1,7 @@
+{
+  "asset_count": 21,
+  "output_dir": "artifacts/public-release",
+  "private_repo_assets_included": false,
+  "public_only": true,
+  "raw_dicom_included": false
+}

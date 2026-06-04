@@ -20,7 +20,10 @@ DEFAULT_TARGETS = [
     ".zenodo.json",
     "artifacts/doi-archive-review-v0.8",
 ]
-ALLOWED_DOIS = {"10.5063/schema/codemeta-2.0"}
+ALLOWED_DOIS = {
+    "10.5063/schema/codemeta-2.0",
+    "10.1007/s10278-026-02019-6",
+}
 PRIVATE_REPO_MARKERS = {
     "udi-dicom-conformance-suite-private",
     "udi-dicom-sample-validation-service-private",

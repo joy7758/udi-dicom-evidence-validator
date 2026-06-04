@@ -39,6 +39,14 @@ synthetic workflow design, reproducibility checks, and boundary-safe
 documentation. No clinical validation, regulatory approval, certification, PHI
 processing, raw DICOM processing, or private-suite exposure is provided here.
 
+## Department Recommendation Materials
+
+For department-level review and recommendation workflows, see the
+[Chinese recommendation report](docs/recommendation/department-recommendation-report-cn.md)
+and [one-page executive brief](docs/recommendation/executive-one-page-cn.md).
+These documents summarize the public validator, paper DOI, Zenodo DOI, and
+boundary-safe evidence map without changing validator behavior.
+
 ## Quickstart
 
 ```bash

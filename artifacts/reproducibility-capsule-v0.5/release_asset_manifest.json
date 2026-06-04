@@ -1,5 +1,5 @@
 {
-  "asset_count": 54,
+  "asset_count": 66,
   "assets": [
     {
       "bytes": 3275,
@@ -22,14 +22,14 @@
       "sha256": "8287c3a5ea75211d545152d07e0e23ba233891e82e021ed15ba8e9573a175b19"
     },
     {
-      "bytes": 8727,
+      "bytes": 9143,
       "path": "artifacts/public-release/README.md",
-      "sha256": "367d4b1d5d998eebf139131dbe9e7678b4a2e87d67bcf4ae748ff75d526b90dd"
+      "sha256": "8ad7afcf53d4459b689ce4f0c5f798537b4730203d77e0eeb0a1456f5c97a38f"
     },
     {
-      "bytes": 4901,
+      "bytes": 6229,
       "path": "artifacts/public-release/SHA256SUMS.txt",
-      "sha256": "b789759400c468e7600532d4c20ef7d16b8ecaf6c4b3818c71230dfaa400a6db"
+      "sha256": "bf3a5ad6c49a32fe21781c6d7614e6b2ecb61409dba6b19d39ac2f50087b8753"
     },
     {
       "bytes": 3404,
@@ -105,6 +105,66 @@
       "bytes": 392,
       "path": "artifacts/public-release/docs/receipt-explainer.md",
       "sha256": "e155a1c606fc40829db6941c59f5fffcff657c0fb4fa6450d279aff3cd51e123"
+    },
+    {
+      "bytes": 1265,
+      "path": "artifacts/public-release/docs/recommendation/README.md",
+      "sha256": "0ee00b38296ea8f0fccff3c87ac1f9f3e9bcc2c9f89ab4e5972847a7564bac7e"
+    },
+    {
+      "bytes": 896,
+      "path": "artifacts/public-release/docs/recommendation/attachment-checklist.md",
+      "sha256": "8ba29279f447524890726cef32b4b81af330d69ffb42f46bb88a1db0878b086d"
+    },
+    {
+      "bytes": 1297,
+      "path": "artifacts/public-release/docs/recommendation/boundary-and-risk-statement-cn.md",
+      "sha256": "50754fc271da79e893ba6439a20fb202b7e11b1488923a3950552d58ed32bfac"
+    },
+    {
+      "bytes": 3028,
+      "path": "artifacts/public-release/docs/recommendation/department-recommendation-report-cn.md",
+      "sha256": "5fbfcf211a0499724222f8aab73313c05a5d51b55edbd9bace0ddc723b747a47"
+    },
+    {
+      "bytes": 1172,
+      "path": "artifacts/public-release/docs/recommendation/device-manufacturer-brief-cn.md",
+      "sha256": "e833f49fc907fabca35d7879f3d943347b8a26341d27254b2aa6209bd9b90ad9"
+    },
+    {
+      "bytes": 1586,
+      "path": "artifacts/public-release/docs/recommendation/email-templates-cn-en.md",
+      "sha256": "b060a8e4cfa8a131723bdb04f2e70a56d9eb7fe6f7a8f297ff7a57789e5e8df3"
+    },
+    {
+      "bytes": 1572,
+      "path": "artifacts/public-release/docs/recommendation/evidence-map.md",
+      "sha256": "8ac3f9635bb587b3f96305bfafb4ce3222a68e7debf47ee70f9aa140405e20fb"
+    },
+    {
+      "bytes": 1671,
+      "path": "artifacts/public-release/docs/recommendation/executive-one-page-cn.md",
+      "sha256": "d222bb1fa716fc4458ab0f4ad0b46dac2a54c550b7acdc40a6e624077d83ddb7"
+    },
+    {
+      "bytes": 1093,
+      "path": "artifacts/public-release/docs/recommendation/hospital-it-brief-cn.md",
+      "sha256": "255e9c5a409f5c920e7e3ab8622bfbc235b5e05d1dda283b62f0b0433df9b617"
+    },
+    {
+      "bytes": 1046,
+      "path": "artifacts/public-release/docs/recommendation/medical-ai-data-brief-cn.md",
+      "sha256": "bece3ab0fb6bc530f417893f33a92c22a9f5dba1d6b7ce8115780e81adb8461f"
+    },
+    {
+      "bytes": 1118,
+      "path": "artifacts/public-release/docs/recommendation/meeting-script-cn.md",
+      "sha256": "323140317f17d61b82088494c956a2e02fd8a38c00476746d8ec39befcb5d4c2"
+    },
+    {
+      "bytes": 1049,
+      "path": "artifacts/public-release/docs/recommendation/next-step-gate.md",
+      "sha256": "d00e10de77087d7b4eb697741065da9e26acff50cb4f7331bdf1974257d127a5"
     },
     {
       "bytes": 1373,
@@ -249,7 +309,7 @@
     {
       "bytes": 163,
       "path": "artifacts/public-release/public-release-summary.json",
-      "sha256": "0ff3f767bd482cac329f2d9f775d4c48693d5cd150114583a0cf750726c14e3c"
+      "sha256": "e489f35d663c0987c3ce3d964095bf87f3e84686e7e3b3f0993bade5cc60c880"
     },
     {
       "bytes": 537,
@@ -267,9 +327,9 @@
       "sha256": "54a8c9f8ad4d30a246f079d0b183a03f92f3ff7d5e8b64fe1d33a8931a8bde91"
     },
     {
-      "bytes": 64258,
+      "bytes": 84123,
       "path": "artifacts/public-release/udi-dicom-evidence-validator-public-worktree-source.zip",
-      "sha256": "3f817f712f6fa73edd8766abb8cd5078e9fdfa835d31bab4bfc2676e5fa1862c"
+      "sha256": "d099b6b79261cee3eb86a7c38bcdb6b90a67eca374c85b23430d83972e21a94c"
     }
   ],
   "public_only": true,

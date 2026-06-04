@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -28,6 +29,8 @@ def run(args: list[str], cwd: Path) -> dict[str, Any]:
 def smoke(repo_url: str, branch: str, keep_workspace: bool = False) -> dict[str, Any]:
     workspace = Path(tempfile.mkdtemp(prefix="udi-dicom-clean-clone-"))
     clone_dir = workspace / "repo"
+    venv_dir = workspace / "venv"
+    python_bin = venv_dir / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     steps: list[dict[str, Any]] = []
     try:
         steps.append(
@@ -38,12 +41,16 @@ def smoke(repo_url: str, branch: str, keep_workspace: bool = False) -> dict[str,
         )
         if steps[-1]["returncode"] != 0:
             return {"ok": False, "workspace": str(workspace), "steps": steps}
+        steps.append(run([sys.executable, "-m", "venv", str(venv_dir)], workspace))
+        if steps[-1]["returncode"] != 0:
+            return {"ok": False, "workspace": str(workspace), "steps": steps}
         commands = [
-            [sys.executable, "-m", "pip", "install", "-e", ".[dev,api]"],
-            [sys.executable, "-m", "pytest", "-q"],
-            [sys.executable, "scripts/check_golden_receipts.py"],
-            [sys.executable, "scripts/build_public_evaluation_matrix.py"],
-            [sys.executable, "demo/portable-ultrasound/run_demo.py"],
+            [str(python_bin), "-m", "pip", "install", "-U", "pip"],
+            [str(python_bin), "-m", "pip", "install", "-e", ".[dev,api]"],
+            [str(python_bin), "-m", "pytest", "-q"],
+            [str(python_bin), "scripts/check_golden_receipts.py"],
+            [str(python_bin), "scripts/build_public_evaluation_matrix.py"],
+            [str(python_bin), "demo/portable-ultrasound/run_demo.py"],
         ]
         for command in commands:
             steps.append(run(command, clone_dir))

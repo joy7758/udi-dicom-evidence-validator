@@ -27,9 +27,11 @@ FORBIDDEN_TOOL_PREFIXES = (
 
 def _ensure_public_example(path: Path) -> Path:
     resolved = path.resolve()
-    if PUBLIC_EXAMPLES.resolve() not in resolved.parents and resolved != PUBLIC_EXAMPLES.resolve():
+    public_root = PUBLIC_EXAMPLES.resolve()
+    if public_root not in resolved.parents and resolved != public_root:
         raise ValueError("Only public examples are accessible.")
-    if "private" in resolved.parts or "partner" in resolved.parts:
+    relative_parts = resolved.relative_to(public_root).parts
+    if "private" in relative_parts or "partner" in relative_parts:
         raise ValueError("Private or partner content is not accessible.")
     return resolved
 

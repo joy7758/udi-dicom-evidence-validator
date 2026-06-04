@@ -25,3 +25,14 @@ def test_public_mcp_blocks_private_tools_and_paths() -> None:
         mcp_server.call_tool("run_private_suite")
     with pytest.raises(ValueError):
         mcp_server.validate_public_manifest_fixture("../cases/private/example.json")
+
+
+def test_public_mcp_allows_safe_public_example_under_private_system_path(
+    tmp_path, monkeypatch
+) -> None:
+    public_root = tmp_path / "private" / "repo" / "examples" / "public"
+    public_root.mkdir(parents=True)
+    fixture = public_root / "manifest.pass.json"
+    fixture.write_text("{}", encoding="utf-8")
+    monkeypatch.setattr(mcp_server, "PUBLIC_EXAMPLES", public_root)
+    assert mcp_server._ensure_public_example(fixture) == fixture.resolve()

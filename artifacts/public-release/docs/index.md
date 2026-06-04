@@ -14,6 +14,11 @@ Start here:
 - `docs/external-feedback-intake-v0.6.md` for reviewer feedback intake.
 - `docs/v0.7-paper-submission-prep.md` for human paper-review and DOI-prep
   handoff.
+- `docs/doi-archive-review-v0.8.md` for DOI archive readiness.
+- `docs/zenodo-release-trigger-plan-v0.8.md` for the manual Zenodo release gate.
+- `docs/no-fake-doi-policy-v0.8.md` for DOI wording rules.
+- `docs/paper-finalization-bundle-v0.8.md` for the finalization bundle.
+- `docs/citation-metadata-consistency-v0.8.md` for citation metadata checks.
 
 Default boundary: synthetic public examples, no PHI, no raw DICOM files, offline
 registry fixtures first, live openFDA explicit opt-in, and no clinical

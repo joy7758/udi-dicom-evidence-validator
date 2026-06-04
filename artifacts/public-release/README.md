@@ -142,3 +142,24 @@ submission or archive deposition decision. The boundary remains no PHI, no raw
 DICOM, not clinical validation, not regulatory approval, not certification, no
 fake DOI, Device UID != UDI-DI, offline fixture first, live openFDA explicit
 opt-in, FDO-style mapping only, and no robot operation evidence.
+
+## v0.8 DOI Archive Readiness
+
+v0.8 adds DOI archive review and paper finalization support for the public
+validator only:
+
+```bash
+python scripts/build_doi_archive_review_package.py
+python scripts/check_doi_archive_review_package.py artifacts/doi-archive-review-v0.8
+python scripts/check_no_fake_doi.py
+python scripts/build_paper_finalization_bundle.py
+python scripts/check_paper_finalization_bundle.py artifacts/paper-finalization-bundle-v0.8
+python scripts/check_citation_metadata_consistency.py
+```
+
+This is a DOI pending state. Zenodo GitHub integration must be enabled manually,
+and a new GitHub Release must be created after enablement before Zenodo can
+archive the public repository. No DOI is written here; citation metadata may be
+updated only after a real Zenodo record URL and DOI are verified.
+
+Private suite and private service materials are outside public DOI scope.

@@ -63,3 +63,15 @@ Do not change validator logic, schemas, examples, or receipt semantics. Run
 `scripts/check_archive_metadata_report.py`,
 `scripts/build_paper_submission_package.py`, and
 `scripts/check_paper_submission_package.py`.
+
+## v0.8 Workflow
+
+For DOI archive readiness and paper finalization support, keep changes
+public-only and documentation/artifact-gate oriented. Run
+`scripts/build_doi_archive_review_package.py`,
+`scripts/check_doi_archive_review_package.py`, `scripts/check_no_fake_doi.py`,
+`scripts/build_paper_finalization_bundle.py`,
+`scripts/check_paper_finalization_bundle.py`, and
+`scripts/check_citation_metadata_consistency.py`. Do not change validator logic,
+schemas, examples, CLI, API, or receipt semantics. Do not write a DOI until a
+real Zenodo or archive-service record is verified.

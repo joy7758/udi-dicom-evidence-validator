@@ -48,3 +48,10 @@ readiness and DOI-ready archive metadata review. No DOI is claimed before an
 archive service assigns one. Do not add validator behavior, schema changes, real
 samples, PHI, raw DICOM, private suite exposure, clinical validation,
 regulatory approval, certification, or robot operation evidence.
+
+v0.8 note: use `scripts/build_doi_archive_review_package.py`,
+`scripts/check_no_fake_doi.py`,
+`scripts/build_paper_finalization_bundle.py`, and
+`scripts/check_citation_metadata_consistency.py` for DOI archive readiness,
+paper finalization support, no-fake-DOI scanning, and citation metadata
+consistency. This is DOI pending until a verified archive record exists.

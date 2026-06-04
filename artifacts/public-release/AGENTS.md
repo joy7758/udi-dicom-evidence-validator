@@ -55,3 +55,15 @@ Mermaid figure sources. Run `scripts/build_archive_metadata_report.py`,
 `scripts/check_archive_metadata_report.py`,
 `scripts/build_paper_submission_package.py`, and
 `scripts/check_paper_submission_package.py`. Do not claim an assigned DOI.
+
+## v0.8 DOI Archive Readiness Rule
+
+For v0.8 DOI archive readiness, keep changes public-only and limited to DOI
+review, no-fake-DOI checks, paper finalization support, and citation metadata
+consistency. Do not change validator behavior, schemas, examples, CLI, API, or
+receipt semantics. Run `scripts/build_doi_archive_review_package.py`,
+`scripts/check_doi_archive_review_package.py`, `scripts/check_no_fake_doi.py`,
+`scripts/build_paper_finalization_bundle.py`,
+`scripts/check_paper_finalization_bundle.py`, and
+`scripts/check_citation_metadata_consistency.py`. Do not write a DOI before a
+real archive record is verified.

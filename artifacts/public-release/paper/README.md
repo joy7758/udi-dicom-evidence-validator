@@ -20,3 +20,7 @@ Out of scope:
   assurance, or hospital deployment claims.
 - Medical robot operation evidence.
 
+v0.6 adds `paper/submission/` for journal-neutral submission readiness. These
+drafts keep references requiring human confirmation in
+`paper/references-to-check.md` and do not bind the manuscript to a specific
+journal.

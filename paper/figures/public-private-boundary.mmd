@@ -1,0 +1,7 @@
+flowchart LR
+  P["Public repo: validator, schemas, synthetic examples, paper package"] --> R["Public release assets"]
+  R --> D["DOI-ready public archive metadata"]
+  S["Private suite: controlled partner-review infrastructure"] -. "not copied to public release" .-> R
+  V["Private service: synthetic customer dry run and handoff policy"] -. "not public paper dataset" .-> D
+  P --> B["Boundary: no PHI, no raw DICOM, not clinical validation"]
+

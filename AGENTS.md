@@ -45,3 +45,13 @@ synthetic-only. Use `scripts/build_reproducibility_capsule.py` and
 Do not add real samples, raw DICOM files, PHI, private suite content, private
 service workflows, robot operation evidence, clinical validation, regulatory
 approval, certification, or official FDO implementation claims.
+
+## v0.6 Paper Submission Rule
+
+For v0.6 paper submission readiness, do not change validator behavior, schema
+behavior, or public example semantics. Keep work limited to journal-neutral
+paper material, DOI-ready metadata review, external feedback intake, and
+Mermaid figure sources. Run `scripts/build_archive_metadata_report.py`,
+`scripts/check_archive_metadata_report.py`,
+`scripts/build_paper_submission_package.py`, and
+`scripts/check_paper_submission_package.py`. Do not claim an assigned DOI.

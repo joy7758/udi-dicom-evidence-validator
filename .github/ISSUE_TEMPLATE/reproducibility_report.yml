@@ -1,0 +1,24 @@
+name: Reproducibility report
+description: Report public reproduction command results.
+title: "[Reproducibility]: "
+labels: ["reproducibility"]
+body:
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands and outputs
+      description: Use public synthetic examples only.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Boundary confirmation
+      options:
+        - label: No PHI is included.
+          required: true
+        - label: No raw DICOM file is included.
+          required: true
+        - label: No clinical validation, regulatory approval, or certification claim is included.
+          required: true
+

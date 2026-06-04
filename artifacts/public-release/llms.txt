@@ -40,3 +40,11 @@ v0.5 note: use `paper/`, `docs/external-review-pack-v0.5.md`, and
 material. This is public-only and synthetic-only. Do not infer clinical
 validation, regulatory approval, certification, real sample handling, robot
 operation evidence, or official FDO implementation.
+
+v0.6 note: use `paper/submission/`,
+`scripts/build_paper_submission_package.py`, and
+`scripts/build_archive_metadata_report.py` for journal-neutral paper submission
+readiness and DOI-ready archive metadata review. No DOI is claimed before an
+archive service assigns one. Do not add validator behavior, schema changes, real
+samples, PHI, raw DICOM, private suite exposure, clinical validation,
+regulatory approval, certification, or robot operation evidence.

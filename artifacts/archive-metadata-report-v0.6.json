@@ -1,0 +1,32 @@
+{
+  "archive_service_status": "ready_for_zenodo_or_archive_service_review",
+  "assigned_doi": null,
+  "boundary": [
+    "public validator only",
+    "no PHI",
+    "no raw DICOM",
+    "not clinical validation",
+    "not regulatory approval",
+    "not certification",
+    "private suite and private service excluded from public DOI"
+  ],
+  "checks": {
+    "author_present": true,
+    "doi_not_claimed": true,
+    "keyword_overlap": true,
+    "license_consistent": true,
+    "private_repositories_excluded_from_public_doi": true,
+    "public_repo_only": true,
+    "repository_url_consistent": true,
+    "title_consistent": true,
+    "version_present": true
+  },
+  "citation_cff_version": "0.4.0",
+  "codemeta_version": "0.4.0",
+  "doi_claimed": false,
+  "doi_ready": true,
+  "license": "MIT",
+  "report_version": "v0.6",
+  "repository_url": "https://github.com/joy7758/udi-dicom-evidence-validator",
+  "title": "UDI-DICOM Evidence Validator"
+}

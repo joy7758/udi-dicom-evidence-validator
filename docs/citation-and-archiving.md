@@ -27,3 +27,7 @@ review, but the reproducibility capsule remains a technical reproduction pack.
 It does not claim DOI assignment until an archive service assigns one, and it
 does not imply clinical validation, regulatory approval, certification, or
 official FDO implementation.
+
+v0.6 adds an archive metadata report and DOI readiness checklist. These outputs
+are DOI-ready review material only. They do not claim an assigned DOI, and they
+exclude private suite and private service material from public DOI scope.

@@ -1,0 +1,26 @@
+name: Boundary concern
+description: Report a possible scope or safety boundary issue.
+title: "[Boundary concern]: "
+labels: ["boundary-concern", "needs-human-review"]
+body:
+  - type: checkboxes
+    id: concern
+    attributes:
+      label: Concern type
+      options:
+        - label: PHI risk
+        - label: clinical validation overclaim
+        - label: regulatory approval overclaim
+        - label: certification overclaim
+        - label: private suite exposure
+        - label: Device UID / UDI-DI confusion
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Cite public files or release assets only. Do not include private or patient data.
+    validations:
+      required: true
+

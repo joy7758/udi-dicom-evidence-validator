@@ -10,9 +10,9 @@
 | `scripts/` | Public build, release, and reproducibility helpers |
 | `demo/portable-ultrasound/` | Synthetic demo scenario |
 | `paper/` | v0.5 paper review pack |
+| `paper/submission/` | v0.6 journal-neutral submission readiness drafts |
 | `docs/` | Public documentation and reviewer material |
 | `artifacts/` | Generated public outputs |
 
 Private suite and private service repositories are not part of this public
 validator repository.
-

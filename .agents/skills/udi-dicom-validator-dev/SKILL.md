@@ -53,3 +53,13 @@ capsule scripts together. Run `scripts/build_reproducibility_capsule.py` and
 public-only, and free of raw DICOM files, PHI, private cases, clinical
 validation claims, regulatory approval claims, certification claims, robot
 operation evidence, and official FDO implementation claims.
+
+## v0.6 Workflow
+
+For paper submission readiness, keep changes to paper submission documents,
+DOI-ready metadata review, feedback intake templates, and Mermaid text figures.
+Do not change validator logic, schemas, examples, or receipt semantics. Run
+`scripts/build_archive_metadata_report.py`,
+`scripts/check_archive_metadata_report.py`,
+`scripts/build_paper_submission_package.py`, and
+`scripts/check_paper_submission_package.py`.

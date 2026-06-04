@@ -21,3 +21,12 @@ The public asset builder must remain public-only and must not include private
 suite, private service, raw DICOM, PHI, or real sample materials. External
 review docs must keep the reference-validator boundary: not clinical validation,
 not regulatory approval, and not certification.
+
+## v0.5 Notes
+
+Paper review agents should treat `paper/`, `docs/external-review-pack-v0.5.md`,
+and `artifacts/reproducibility-capsule-v0.5/` as public reviewer material only.
+Run `scripts/build_reproducibility_capsule.py` and
+`scripts/check_reproducibility_capsule.py`. Do not add real samples, private
+cases, raw DICOM files, PHI, robot operation evidence, or official FDO
+implementation claims.

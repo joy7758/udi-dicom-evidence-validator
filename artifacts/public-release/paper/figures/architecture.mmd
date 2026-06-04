@@ -1,0 +1,9 @@
+flowchart LR
+  A["Synthetic DICOM metadata JSON"] --> V["Reference validator"]
+  B["Evidence manifest JSON"] --> V
+  C["Offline registry fixture JSON"] --> V
+  V --> R["Deterministic receipt JSON"]
+  V --> M["Reviewer report Markdown"]
+  V --> G["Golden receipt regression"]
+  G --> C1["Reproducibility capsule"]
+

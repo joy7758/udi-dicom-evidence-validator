@@ -1,0 +1,17 @@
+{
+  "checked": 9,
+  "golden_receipt_count": 9,
+  "golden_receipts": [
+    "tests/golden/v0.1/manifest_fail_device_uid_used_as_udi_di.receipt.json",
+    "tests/golden/v0.1/manifest_fail_missing_udi.receipt.json",
+    "tests/golden/v0.1/manifest_fail_registry_unresolved.receipt.json",
+    "tests/golden/v0.1/manifest_fail_wrong_sop_uid.receipt.json",
+    "tests/golden/v0.1/manifest_pass.receipt.json",
+    "tests/golden/v0.2/manifest_v0_2_fail_device_uid_used_as_udi_di.receipt.json",
+    "tests/golden/v0.2/manifest_v0_2_fail_missing_udi.receipt.json",
+    "tests/golden/v0.2/manifest_v0_2_fail_registry_unresolved.receipt.json",
+    "tests/golden/v0.2/manifest_v0_2_pass.receipt.json"
+  ],
+  "mismatch_count": 0,
+  "ok": true
+}

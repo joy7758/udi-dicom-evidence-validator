@@ -11,3 +11,5 @@
   implementation claim.
 - The public MCP skeleton exposes public helper functions only; it does not
   access private conformance cases or private service workflows.
+- v0.5 paper/reviewer material is a technical review pack only and does not add
+  new medical functions, real sample handling, or robot operation evidence.

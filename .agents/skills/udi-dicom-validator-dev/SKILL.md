@@ -43,3 +43,13 @@ For release hardening, run `scripts/build_public_release_assets.py`,
 private suite or private service materials. Archive metadata is DOI-ready only
 and must not claim an assigned DOI before Zenodo or another archive service
 assigns one.
+
+## v0.5 Workflow
+
+For paper review and reproducibility changes, update `paper/`,
+`docs/external-review-pack-v0.5.md`, reviewer docs, and the reproducibility
+capsule scripts together. Run `scripts/build_reproducibility_capsule.py` and
+`scripts/check_reproducibility_capsule.py`. Keep outputs synthetic-only,
+public-only, and free of raw DICOM files, PHI, private cases, clinical
+validation claims, regulatory approval claims, certification claims, robot
+operation evidence, and official FDO implementation claims.

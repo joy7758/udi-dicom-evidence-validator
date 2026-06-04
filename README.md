@@ -96,3 +96,19 @@ files, and PHI. The external review pack is in `docs/external-review-brief.md`,
 `docs/external-review-checklist.md`, and `docs/reproducibility-for-reviewers.md`.
 Archive metadata is DOI-ready only; no DOI is claimed until an archive service
 assigns one.
+
+## v0.5 Paper Review Pack
+
+v0.5 adds public paper drafting material, external reviewer quickstart/checklist
+documents, and a reproducibility capsule:
+
+```bash
+python scripts/build_reproducibility_capsule.py
+python scripts/check_reproducibility_capsule.py artifacts/reproducibility-capsule-v0.5
+```
+
+The v0.5 material is for technical paper review and reproduction only. It does
+not add new medical functions, does not include real samples, does not include
+robot operation evidence, and does not change the boundary: Device UID is not
+UDI-DI, offline registry fixtures remain the default, live openFDA lookup is
+explicit opt-in, and FDO-style mapping is not an official FDO implementation.

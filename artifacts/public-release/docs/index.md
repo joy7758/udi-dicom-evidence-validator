@@ -12,6 +12,8 @@ Start here:
 - `docs/paper-submission-workflow-v0.6.md` for paper package generation.
 - `docs/doi-readiness-v0.6.md` for archive metadata readiness.
 - `docs/external-feedback-intake-v0.6.md` for reviewer feedback intake.
+- `docs/v0.7-paper-submission-prep.md` for human paper-review and DOI-prep
+  handoff.
 
 Default boundary: synthetic public examples, no PHI, no raw DICOM files, offline
 registry fixtures first, live openFDA explicit opt-in, and no clinical

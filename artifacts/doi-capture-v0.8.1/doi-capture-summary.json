@@ -1,0 +1,30 @@
+{
+  "status": "REAL_DOI_VERIFIED",
+  "doi": "10.5281/zenodo.20540532",
+  "doi_url": "https://doi.org/10.5281/zenodo.20540532",
+  "record_url": "https://zenodo.org/records/20540532",
+  "release_tag": "v0.8.1-public",
+  "release_url": "https://github.com/joy7758/udi-dicom-evidence-validator/releases/tag/v0.8.1-public",
+  "release_published_at": "2026-06-04T10:32:14Z",
+  "public_head": "61ac7ead4eb66924c1ba210badf693e0cb8a7293",
+  "tag_object": "58e80fd23b7a424ce625b2f071d14b3c5b23486e",
+  "tag_target": "61ac7ead4eb66924c1ba210badf693e0cb8a7293",
+  "verification": {
+    "zenodo_settings_page_visible_doi": true,
+    "doi_redirect_final_url": "https://zenodo.org/records/20540532",
+    "record_page_contains_doi": true,
+    "record_page_contains_v0_8_1_release_text": true
+  },
+  "boundary": {
+    "public_only_archive": true,
+    "private_suite_excluded": true,
+    "private_service_excluded": true,
+    "no_phi": true,
+    "no_raw_dicom": true,
+    "not_clinical_validation": true,
+    "not_regulatory_approval": true,
+    "not_certification": true,
+    "no_fake_doi": true,
+    "device_uid_not_udi_di": true
+  }
+}

@@ -13,6 +13,7 @@ REPOSITORY_URL = "https://github.com/joy7758/udi-dicom-evidence-validator"
 TITLE = "UDI-DICOM Evidence Validator"
 ALLOWED_DOIS = {"10.5063/schema/codemeta-2.0"}
 DOI_PATTERN = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Za-z0-9]+")
+DOI_CAPTURE_SUMMARY = ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json"
 
 
 def parse_cff(text: str) -> dict[str, Any]:
@@ -54,19 +55,41 @@ def parse_cff(text: str) -> dict[str, Any]:
     return values
 
 
-def claimed_dois(texts: list[str]) -> list[str]:
+def load_verified_capture() -> dict[str, str] | None:
+    if not DOI_CAPTURE_SUMMARY.exists():
+        return None
+    data = json.loads(DOI_CAPTURE_SUMMARY.read_text(encoding="utf-8"))
+    doi = str(data.get("doi", ""))
+    record_url = str(data.get("record_url", ""))
+    if data.get("status") != "REAL_DOI_VERIFIED":
+        return None
+    if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+        return None
+    if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
+        return None
+    return {"doi": doi, "record_url": record_url}
+
+
+def claimed_dois(texts: list[str], allowed_dois: set[str]) -> list[str]:
     matches: set[str] = set()
     for text in texts:
         matches.update(match.group(0).rstrip(".,)") for match in DOI_PATTERN.finditer(text))
-    return sorted(matches - ALLOWED_DOIS)
+    return sorted(matches - allowed_dois)
 
 
 def build_report() -> dict[str, Any]:
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
     zenodo = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    capture = load_verified_capture()
+    verified_doi = capture["doi"] if capture else None
+    verified_record_url = capture["record_url"] if capture else None
+    allowed_dois = set(ALLOWED_DOIS)
+    if verified_doi:
+        allowed_dois.add(verified_doi)
     cff_text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
+    docs_text = (ROOT / "docs" / "citation-and-archiving.md").read_text(encoding="utf-8")
     cff = parse_cff(cff_text)
     codemeta_author = codemeta.get("author", [{}])[0]
     codemeta_name = (
@@ -85,8 +108,26 @@ def build_report() -> dict[str, Any]:
             json.dumps(codemeta, sort_keys=True),
             json.dumps(zenodo, sort_keys=True),
             readme_text,
-        ]
+            docs_text,
+        ],
+        allowed_dois,
     )
+    verified_metadata_consistent = False
+    if verified_doi and verified_record_url:
+        verified_metadata_consistent = (
+            cff.get("doi") == verified_doi
+            and cff.get("url") == verified_record_url
+            and codemeta.get("identifier") == verified_doi
+            and codemeta.get("sameAs") == verified_record_url
+            and codemeta.get("citation") == f"https://doi.org/{verified_doi}"
+            and zenodo.get("doi") == verified_doi
+            and zenodo.get("record_url") == verified_record_url
+            and verified_doi in readme_text
+            and verified_record_url in readme_text
+            and verified_doi in docs_text
+            and verified_record_url in docs_text
+        )
+    pending_wording_present = "DOI-ready" in cff_text or "DOI pending" in readme_text
     checks = {
         "title_consistent": (
             codemeta.get("name") == cff.get("title") == zenodo.get("title") == TITLE
@@ -112,7 +153,8 @@ def build_report() -> dict[str, Any]:
         ),
         "version_explainable": all(version_values.values()),
         "doi_not_fabricated": not doi_hits,
-        "doi_pending_wording_present": "DOI-ready" in cff_text or "DOI pending" in readme_text,
+        "doi_status_wording_present": verified_metadata_consistent or pending_wording_present,
+        "verified_doi_metadata_consistent": verified_metadata_consistent if capture else True,
         "public_repo_only": True,
     }
     report = {
@@ -124,9 +166,12 @@ def build_report() -> dict[str, Any]:
         "title": TITLE,
         "author": "Bin Zhang",
         "license": "MIT",
-        "doi_status": "DOI pending",
+        "doi_status": "DOI verified" if capture else "DOI pending",
+        "verified_doi": verified_doi,
+        "zenodo_record_url": verified_record_url,
         "claimed_or_placeholder_dois": doi_hits,
         "allowed_doi_references": sorted(ALLOWED_DOIS),
+        "allowed_verified_dois": sorted(allowed_dois - ALLOWED_DOIS),
         "boundary": [
             "public validator only",
             "no PHI",
@@ -161,14 +206,23 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(
         f"- {name}: `{value}`" for name, value in sorted(report["version_values"].items())
     )
-    lines.extend(
-        [
-            "",
-            "No DOI is claimed. Citation metadata remains DOI pending until a verified",
-            "Zenodo record URL and DOI are available.",
-            "",
-        ]
-    )
+    lines.append("")
+    if report["doi_status"] == "DOI verified":
+        lines.extend(
+            [
+                f"Verified DOI: `{report['verified_doi']}`",
+                f"Zenodo record URL: {report['zenodo_record_url']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "No DOI is claimed. Citation metadata remains DOI pending until a verified",
+                "Zenodo record URL and DOI are available.",
+                "",
+            ]
+        )
     return "\n".join(lines)
 
 

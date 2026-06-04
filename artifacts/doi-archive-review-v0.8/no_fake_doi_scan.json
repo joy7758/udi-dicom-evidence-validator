@@ -2,8 +2,8 @@
   "allowed_doi_references": [
     "10.5063/schema/codemeta-2.0"
   ],
-  "doi_policy": "DOI-ready and DOI pending are allowed; real DOI claims require verification.",
-  "files_checked": 100,
+  "doi_policy": "DOI-ready and DOI pending are allowed; real DOI claims require a REAL_DOI_VERIFIED capture summary.",
+  "files_checked": 101,
   "hits": [],
   "ok": true,
   "targets": [
@@ -14,5 +14,8 @@
     "CITATION.cff",
     "codemeta.json",
     ".zenodo.json"
+  ],
+  "verified_dois": [
+    "10.5281/zenodo.20540532"
   ]
 }

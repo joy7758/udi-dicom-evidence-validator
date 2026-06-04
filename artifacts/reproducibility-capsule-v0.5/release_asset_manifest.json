@@ -7,9 +7,9 @@
       "sha256": "c6114f52270843fbbffc6afd81977a1085b0c1f08aa5a8319c393d7b4050f420"
     },
     {
-      "bytes": 548,
+      "bytes": 655,
       "path": "artifacts/public-release/CITATION.cff",
-      "sha256": "7f48c07fec090e3e136b4001b1fc4c941a5320b2433263070bafd0f019958d20"
+      "sha256": "e822b081534cf6accb917d52590a48e4971f8aa5a5fa5c5ec38aee8028df6fd8"
     },
     {
       "bytes": 42,
@@ -22,14 +22,14 @@
       "sha256": "8287c3a5ea75211d545152d07e0e23ba233891e82e021ed15ba8e9573a175b19"
     },
     {
-      "bytes": 6391,
+      "bytes": 6835,
       "path": "artifacts/public-release/README.md",
-      "sha256": "fbb1733817679b7053305ed28472186ecd12adb9fb2e19ea9779d086abc8157d"
+      "sha256": "a47830446726d24b253b968929dc53d269991a0f6b12bfce0082b5764f1ef359"
     },
     {
       "bytes": 4901,
       "path": "artifacts/public-release/SHA256SUMS.txt",
-      "sha256": "924c166c718fb1e6344b849d0a4fa1bd936c30c3921f02d883e484b0b1bbbe42"
+      "sha256": "6b9e54d493c47455c4e2babb32db5ce8bb69396115ee1b18f75993f11583902d"
     },
     {
       "bytes": 3404,
@@ -37,14 +37,14 @@
       "sha256": "ef71eb1334acb4324a2d148926f0f9f61172261f8343e6fc7f64bc748e09ddab"
     },
     {
-      "bytes": 860,
+      "bytes": 1011,
       "path": "artifacts/public-release/codemeta.json",
-      "sha256": "03f7b08f5ea1b66a773c1be5ec7ca4186600b631ad530c3a24f5c516bf9087da"
+      "sha256": "cc454f6b20b365c8991ce1053431d09682f1b499b087178711afa31c6bc08aea"
     },
     {
-      "bytes": 1785,
+      "bytes": 2159,
       "path": "artifacts/public-release/docs/citation-and-archiving.md",
-      "sha256": "8912ba6fa85f7458b78a4c5e54903e83c7060569c3e91c3a4afdb065bf49da28"
+      "sha256": "8bcf06604e429c55bc3dbfadfc8ea11c69100b7f67367f4cc213b9736bdce1e6"
     },
     {
       "bytes": 545,
@@ -267,9 +267,9 @@
       "sha256": "54a8c9f8ad4d30a246f079d0b183a03f92f3ff7d5e8b64fe1d33a8931a8bde91"
     },
     {
-      "bytes": 61290,
+      "bytes": 62366,
       "path": "artifacts/public-release/udi-dicom-evidence-validator-public-worktree-source.zip",
-      "sha256": "885b324e0acfd49fb4fff41ac7e0d8198693b65ada7d60d5c7159657a4911c0a"
+      "sha256": "d1f34938a047fd9eecb9fadb0b3d492c8351cedc78d433fc70784ec5193e97a9"
     }
   ],
   "public_only": true,

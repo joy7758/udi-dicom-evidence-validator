@@ -7,6 +7,9 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+VERIFIED_DOI_SUMMARIES = [
+    ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json",
+]
 DEFAULT_TARGETS = [
     "README.md",
     "docs",
@@ -56,7 +59,19 @@ def iter_files(targets: list[Path]) -> list[Path]:
     return sorted(set(files))
 
 
-def inspect_file(path: Path) -> list[dict[str, Any]]:
+def verified_dois() -> set[str]:
+    dois: set[str] = set()
+    for path in VERIFIED_DOI_SUMMARIES:
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        doi = str(data.get("doi", ""))
+        if data.get("status") == "REAL_DOI_VERIFIED" and DOI_PATTERN.fullmatch(doi):
+            dois.add(doi)
+    return dois
+
+
+def inspect_file(path: Path, allowed_dois: set[str]) -> list[dict[str, Any]]:
     text = path.read_text(encoding="utf-8", errors="ignore")
     relative = str(path.relative_to(ROOT))
     hits: list[dict[str, Any]] = []
@@ -70,7 +85,7 @@ def inspect_file(path: Path) -> list[dict[str, Any]]:
         hits.append({"file": relative, "kind": "raw_dicom_extension", "match": match.group(0)})
     for match in DOI_PATTERN.finditer(text):
         doi = match.group(0).rstrip(".,)")
-        if doi not in ALLOWED_DOIS:
+        if doi not in allowed_dois:
             hits.append({"file": relative, "kind": "claimed_or_placeholder_doi", "match": doi})
     for match in UPGRADED_DOI_CLAIM_PATTERN.finditer(text):
         hits.append({"file": relative, "kind": "upgraded_doi_claim", "match": match.group(0)})
@@ -84,17 +99,21 @@ def inspect_file(path: Path) -> list[dict[str, Any]]:
 def run_scan(targets: list[str] | None = None) -> dict[str, Any]:
     selected = targets or DEFAULT_TARGETS
     paths = iter_files([Path(target) for target in selected])
+    verified = verified_dois()
+    allowed = ALLOWED_DOIS | verified
     hits: list[dict[str, Any]] = []
     for path in paths:
-        hits.extend(inspect_file(path))
+        hits.extend(inspect_file(path, allowed))
     return {
         "ok": not hits,
         "hits": hits,
         "files_checked": len(paths),
         "targets": selected,
         "allowed_doi_references": sorted(ALLOWED_DOIS),
+        "verified_dois": sorted(verified),
         "doi_policy": (
-            "DOI-ready and DOI pending are allowed; real DOI claims require verification."
+            "DOI-ready and DOI pending are allowed; real DOI claims require "
+            "a REAL_DOI_VERIFIED capture summary."
         ),
     }
 

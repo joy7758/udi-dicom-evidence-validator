@@ -6,6 +6,9 @@
   "description": "Public reference validator for synthetic UDI-DICOM evidence manifest workflows.",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/joy7758/udi-dicom-evidence-validator",
+  "identifier": "10.5281/zenodo.20540532",
+  "sameAs": "https://zenodo.org/records/20540532",
+  "citation": "https://doi.org/10.5281/zenodo.20540532",
   "programmingLanguage": "Python",
   "runtimePlatform": "Python 3.11+",
   "author": [

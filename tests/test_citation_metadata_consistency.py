@@ -23,5 +23,7 @@ def test_citation_metadata_consistency_gate() -> None:
             encoding="utf-8"
         )
     )
-    assert report["doi_status"] == "DOI pending"
+    assert report["doi_status"] == "DOI verified"
+    assert report["verified_doi"] == "10.5281/zenodo.20540532"
+    assert report["zenodo_record_url"] == "https://zenodo.org/records/20540532"
     assert report["claimed_or_placeholder_dois"] == []

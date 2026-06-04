@@ -163,3 +163,14 @@ archive the public repository. No DOI is written here; citation metadata may be
 updated only after a real Zenodo record URL and DOI are verified.
 
 Private suite and private service materials are outside public DOI scope.
+
+## v0.8.1 Verified Zenodo DOI Capture
+
+Verified Zenodo DOI: `10.5281/zenodo.20540532`
+
+Zenodo record: https://zenodo.org/records/20540532
+
+This DOI refers to the public validator release archive only. It does not
+include private conformance suite or private sample validation service assets.
+The boundary remains no PHI, no raw DICOM, not clinical validation, not
+regulatory approval, not certification, no fake DOI, and Device UID != UDI-DI.

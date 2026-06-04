@@ -1,9 +1,12 @@
 # Citation And Archiving
 
-This repository is DOI-ready but does not claim that a DOI already exists.
-Archive metadata is prepared through `CITATION.cff`, `codemeta.json`, and
-`.zenodo.json` so a GitHub release can be archived by Zenodo or another archive
-service after integration is enabled.
+This repository has a verified Zenodo DOI for the public validator archive:
+
+- DOI: `10.5281/zenodo.20540532`
+- Zenodo record: https://zenodo.org/records/20540532
+
+Archive metadata is maintained through `CITATION.cff`, `codemeta.json`, and
+`.zenodo.json`.
 
 Recommended citation metadata:
 
@@ -37,3 +40,9 @@ bundle, and citation metadata consistency gate. The state remains DOI pending
 until Zenodo or another archive service returns a real record URL and DOI.
 Public DOI scope is the public validator only; private suite and private service
 materials are excluded from public DOI assets.
+
+v0.8.1 captures the verified Zenodo DOI after the Zenodo record was observed and
+the DOI URL resolved to the matching Zenodo record page. The DOI applies only to
+the public validator archive. It does not include private conformance suite or
+private sample validation service materials, and it does not imply clinical
+validation, regulatory approval, certification, or PHI processing.

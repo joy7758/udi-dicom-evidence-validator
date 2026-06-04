@@ -128,3 +128,17 @@ python scripts/check_paper_submission_package.py artifacts/paper-submission-v0.6
 This does not change validator behavior, schema behavior, or public example
 semantics. It does not claim an assigned DOI. Private suite and private service
 materials remain outside the public paper dataset and public DOI scope.
+
+## v0.7 Paper Submission Prep
+
+v0.7 is a controlled paper-submission preparation pass. It adds human review
+handoff checklists for the public paper, Zenodo/DOI readiness review, and
+external reviewer response triage. It does not change validator behavior,
+schema behavior, public example semantics, or release asset generation.
+
+Use `docs/v0.7-paper-submission-prep.md` and
+`paper/submission/v0.7-human-review-checklist.md` before any human paper
+submission or archive deposition decision. The boundary remains no PHI, no raw
+DICOM, not clinical validation, not regulatory approval, not certification, no
+fake DOI, Device UID != UDI-DI, offline fixture first, live openFDA explicit
+opt-in, FDO-style mapping only, and no robot operation evidence.

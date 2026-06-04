@@ -21,3 +21,7 @@ fields, registry fixture evidence, and review artifacts.
 Boundary claim: the project is not clinical validation, not regulatory approval,
 and not certification.
 
+v0.6 submission readiness adds journal-neutral front matter, structured abstract
+draft, availability statement, reproducibility statement, ethics statement,
+limitations statement, DOI-ready archive metadata report, and external feedback
+intake.

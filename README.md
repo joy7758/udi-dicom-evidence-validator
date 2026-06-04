@@ -112,3 +112,19 @@ not add new medical functions, does not include real samples, does not include
 robot operation evidence, and does not change the boundary: Device UID is not
 UDI-DI, offline registry fixtures remain the default, live openFDA lookup is
 explicit opt-in, and FDO-style mapping is not an official FDO implementation.
+
+## v0.6 Paper Submission Readiness
+
+v0.6 prepares journal-neutral paper submission material, DOI-ready archive
+metadata review, and external reviewer feedback intake:
+
+```bash
+python scripts/build_archive_metadata_report.py
+python scripts/check_archive_metadata_report.py artifacts/archive-metadata-report-v0.6.json
+python scripts/build_paper_submission_package.py
+python scripts/check_paper_submission_package.py artifacts/paper-submission-v0.6
+```
+
+This does not change validator behavior, schema behavior, or public example
+semantics. It does not claim an assigned DOI. Private suite and private service
+materials remain outside the public paper dataset and public DOI scope.

@@ -1,8 +1,8 @@
 flowchart TD
-  A["Load manifest, metadata, registry fixture"] --> B["Check required UDI fields"]
+  A["Public repo loads manifest, metadata, registry fixture"] --> B["Check required UDI fields"]
   B --> C["Check SOP Instance UID consistency"]
   C --> D["Reject Device UID as UDI-DI"]
   D --> E["Check registry fixture consistency"]
   E --> F["Check artifact declarations"]
   F --> G["Emit deterministic receipt and report"]
-
+  H["Private suite and private service"] -. "outside public validation flow" .-> G

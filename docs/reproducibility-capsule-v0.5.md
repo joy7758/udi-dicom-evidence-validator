@@ -25,3 +25,6 @@ Capsule files:
 The capsule is public-safe and synthetic-only. It contains no PHI, no raw DICOM
 files, no private suite cases, and no private service workflows.
 
+v0.6 paper submission readiness reuses this capsule as a public reproducibility
+input. The capsule remains public-only and does not become clinical validation,
+regulatory approval, certification, or a DOI assignment.

@@ -1,0 +1,186 @@
+{
+  "allowed_public_release": "v0.5.0-public",
+  "archive_metadata_report": "artifacts/archive-metadata-report-v0.6.json",
+  "boundary": [
+    "no PHI",
+    "no raw DICOM",
+    "not clinical validation",
+    "not regulatory approval",
+    "not certification",
+    "Device UID != UDI-DI",
+    "offline fixture first",
+    "live openFDA explicit opt-in",
+    "FDO-style mapping only"
+  ],
+  "doi_claimed": false,
+  "no_phi": true,
+  "package_version": "v0.6",
+  "private_repo_material_included": false,
+  "public_only": true,
+  "raw_dicom_included": false,
+  "reproducibility_capsule_file_count": 7,
+  "source_file_count": 32,
+  "sources": [
+    {
+      "bytes": 1027,
+      "path": "paper/README.md",
+      "sha256": "8e955b8ec7ece7ba286081af9ca9b9c68d28c18aa090979a228ac057ece24b8f"
+    },
+    {
+      "bytes": 962,
+      "path": "paper/manuscript-outline.md",
+      "sha256": "1753cc9029d555bae50862a9187a64d493fdc3198500750fd7fefd7251fbe5d3"
+    },
+    {
+      "bytes": 920,
+      "path": "paper/abstract.md",
+      "sha256": "7ba69cc6c379ceb085a11627b3b0f9857250b48bd149d2b64e3883a34bf3eb84"
+    },
+    {
+      "bytes": 861,
+      "path": "paper/introduction.md",
+      "sha256": "3951a5914ecf1f2d554b25140e0fe54d2342b7d4a65c65d8f5b029ee3294f95c"
+    },
+    {
+      "bytes": 849,
+      "path": "paper/methods.md",
+      "sha256": "334dee78023601165a5d19e674db9bad8666955e494f13c294e3e3b9c236b8ee"
+    },
+    {
+      "bytes": 638,
+      "path": "paper/evaluation.md",
+      "sha256": "170afec6169f2b7df2ad2a9b67413237eb7e849a8c7ef6623f97feb9d666b02c"
+    },
+    {
+      "bytes": 579,
+      "path": "paper/reproducibility.md",
+      "sha256": "6bdffe0e3e296e80c8bbb8abbdb46ad49ec31ca826744595a3980e4731e0ab90"
+    },
+    {
+      "bytes": 566,
+      "path": "paper/limitations.md",
+      "sha256": "cdd0a417fedb5f285779a20b5f9b3f90205d1051d84b89c83a6657d289567aef"
+    },
+    {
+      "bytes": 476,
+      "path": "paper/data-availability.md",
+      "sha256": "1c9baa5224dc4a3e6fd2a9b97e6885c0a0ccd57913ac876afa821a0817e95740"
+    },
+    {
+      "bytes": 604,
+      "path": "paper/ethics-and-safety-boundary.md",
+      "sha256": "6be25564daca1aa92160c43f8abb047593b6e1d0d93545f10c4606070bb88027"
+    },
+    {
+      "bytes": 587,
+      "path": "paper/references-to-check.md",
+      "sha256": "9df0314dc2adf378907496308744c3d17c92687260529d3a6b4939c5aee573aa"
+    },
+    {
+      "bytes": 686,
+      "path": "paper/submission/README.md",
+      "sha256": "d5d8ab2c47bd3fa6f0e99f83cf3c440e27de85bfca83bbe78bd7eb0f043fa7f9"
+    },
+    {
+      "bytes": 470,
+      "path": "paper/submission/title-page.md",
+      "sha256": "367aec9c3fd7eb9f04ef1acd97d8ad2d6d4eb159fc6c898b221b5cb7bb8979cd"
+    },
+    {
+      "bytes": 1022,
+      "path": "paper/submission/abstract-structured.md",
+      "sha256": "938e7780d37ed1769486787e63a6132d0fe5c245e09c78e4bab724cfe90bc45f"
+    },
+    {
+      "bytes": 781,
+      "path": "paper/submission/cover-letter-neutral.md",
+      "sha256": "323e30b22826cadc8624afb84fba8c25c3f3635ec7bd55d8d80708380f0ed216"
+    },
+    {
+      "bytes": 412,
+      "path": "paper/submission/highlights.md",
+      "sha256": "5bf1d6feb1b27c46591a7b2dbd0880e51f6211e3b037ed2b504123c694b05013"
+    },
+    {
+      "bytes": 383,
+      "path": "paper/submission/software-metadata.md",
+      "sha256": "bad94dabfe194946969b54c9dc4224feb95badcfbd78fb046a4dab23138efcb9"
+    },
+    {
+      "bytes": 408,
+      "path": "paper/submission/availability-statement.md",
+      "sha256": "760b395121269b907274cce2b0668fafac89bd8145491450cfa653423ff6d0d3"
+    },
+    {
+      "bytes": 851,
+      "path": "paper/submission/reproducibility-statement.md",
+      "sha256": "4e32cef87070ae895d6cccd1893a941d4c1c54f9073b6ee1a8ddb5839b25e9d0"
+    },
+    {
+      "bytes": 320,
+      "path": "paper/submission/ethics-statement.md",
+      "sha256": "68bd3bc3f2a83d1dbebae636f41f0d91e5a91c0f74ad08f31d7396f84fddd4d5"
+    },
+    {
+      "bytes": 487,
+      "path": "paper/submission/limitations-statement.md",
+      "sha256": "ea523ebc97107a3d1f0d690a0f6b371cc57a0ceb7956472ffec2c0f0d1a3e774"
+    },
+    {
+      "bytes": 322,
+      "path": "paper/submission/author-contribution-draft.md",
+      "sha256": "775c6374a973a4b5ac2c50241576d29f87638575d26f2130e6d757b32ba2e105"
+    },
+    {
+      "bytes": 208,
+      "path": "paper/submission/conflict-of-interest-draft.md",
+      "sha256": "dd801d84e57885ee7f9570bf2b361674fd97969b86b7f0c776d73cb5e8587731"
+    },
+    {
+      "bytes": 194,
+      "path": "paper/submission/funding-statement-draft.md",
+      "sha256": "bbdfcfc71d250b5beac1c9050debf726d584e1676828aa4f1f179523e8d2a52c"
+    },
+    {
+      "bytes": 735,
+      "path": "paper/submission/checklist-journal-neutral.md",
+      "sha256": "c9a3e7d9d5fbf8e5bc96a437f342f75e1307742b44f2d0d5db2a0b3dfbe310a9"
+    },
+    {
+      "bytes": 767,
+      "path": "docs/reviewer-quickstart-v0.5.md",
+      "sha256": "ab3e43dddee21953ab68b5c389c44f3706784b953b97b2f69ea879e3b0a7a558"
+    },
+    {
+      "bytes": 695,
+      "path": "docs/reviewer-checklist-v0.5.md",
+      "sha256": "ea5edab407cc0958f5075fc2e7f15a509808c12635722cf5860dad77950b9b7b"
+    },
+    {
+      "bytes": 785,
+      "path": "docs/reviewer-expected-outputs-v0.5.md",
+      "sha256": "80d3d7c555d39cc828766f2d43c1069e1d8a9322f6c5ce91f09a798cf87e75cb"
+    },
+    {
+      "bytes": 605,
+      "path": "docs/reviewer-risk-boundary-v0.5.md",
+      "sha256": "cd0f89b553ac2727497a7e0a39634c47e219c841209217c71d50af8a0d50d91c"
+    },
+    {
+      "bytes": 785,
+      "path": "docs/reproducibility-capsule-v0.5.md",
+      "sha256": "7f65393bf46ae864bfa17be5349245d9f62d59973b9fddd794260f597435deaf"
+    },
+    {
+      "bytes": 608,
+      "path": "docs/doi-readiness-v0.6.md",
+      "sha256": "1fd9bfe6a7ee537a27587c40bb280e2cdb294156f3304b57cc39e00779a95af1"
+    },
+    {
+      "bytes": 420,
+      "path": "docs/archive-metadata-review.md",
+      "sha256": "96fffa96213cb12cb6d901035981e8a08c0145e639ac39616619321c6a3f021a"
+    }
+  ],
+  "synthetic_examples_only": true
+}

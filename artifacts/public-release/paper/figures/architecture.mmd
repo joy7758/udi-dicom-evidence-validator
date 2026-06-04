@@ -1,9 +1,26 @@
 flowchart LR
-  A["Synthetic DICOM metadata JSON"] --> V["Reference validator"]
-  B["Evidence manifest JSON"] --> V
-  C["Offline registry fixture JSON"] --> V
+  subgraph PublicRepo["Public repo"]
+    A["Synthetic DICOM metadata JSON"]
+    B["Evidence manifest JSON"]
+    C["Offline registry fixture JSON"]
+    V["Reference validator"]
+    R["Deterministic receipt JSON"]
+    M["Reviewer report Markdown"]
+    G["Golden receipt regression"]
+    C1["Reproducibility capsule"]
+  end
+  subgraph PrivateSuite["Private suite"]
+    S["Controlled partner-review infrastructure"]
+  end
+  subgraph PrivateService["Private service"]
+    P["Synthetic customer dry run and handoff policy"]
+  end
+  A --> V
+  B --> V
+  C --> V
   V --> R["Deterministic receipt JSON"]
   V --> M["Reviewer report Markdown"]
   V --> G["Golden receipt regression"]
   G --> C1["Reproducibility capsule"]
-
+  S -. "not included in public release" .-> C1
+  P -. "not public paper dataset" .-> C1

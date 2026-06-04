@@ -1,0 +1,8 @@
+flowchart TD
+  A["Public synthetic examples"] --> B["Generate golden receipts"]
+  B --> C["Check golden receipt regression"]
+  C --> D["Build public evaluation matrix"]
+  D --> E["Build reproducibility capsule"]
+  E --> F["Check capsule SHA-256 and boundary"]
+  F --> G["Paper submission package"]
+

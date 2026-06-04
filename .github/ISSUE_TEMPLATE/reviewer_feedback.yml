@@ -1,0 +1,26 @@
+name: Reviewer feedback
+description: External technical reviewer feedback for public synthetic material.
+title: "[Reviewer feedback]: "
+labels: ["needs-human-review"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feedback category
+      options:
+        - reproducibility issue
+        - documentation issue
+        - boundary concern
+        - schema clarification
+        - validator bug
+        - out-of-scope request
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Do not include PHI, raw DICOM, real hospital data, or real patient data.
+    validations:
+      required: true
+

@@ -29,5 +29,7 @@ jobs:
           python scripts/build_public_evaluation_matrix.py
           python demo/portable-ultrasound/run_demo.py
       - name: Run clean clone smoke
+        env:
+          CLEAN_CLONE_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
-          python scripts/clean_clone_smoke.py --repo-url https://github.com/${{ github.repository }}.git --branch ${{ github.ref_name }}
+          python scripts/clean_clone_smoke.py --repo-url https://github.com/${{ github.repository }}.git --branch "$CLEAN_CLONE_BRANCH"

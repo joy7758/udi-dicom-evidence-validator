@@ -1,17 +1,18 @@
 # Citation Metadata Consistency v0.8
 
 OK: `True`
-DOI status: `DOI pending`
+DOI status: `DOI verified`
 
 | Check | Status |
 | --- | --- |
 | author_consistent | True |
 | doi_not_fabricated | True |
-| doi_pending_wording_present | True |
+| doi_status_wording_present | True |
 | license_consistent | True |
 | public_repo_only | True |
 | repository_url_consistent | True |
 | title_consistent | True |
+| verified_doi_metadata_consistent | True |
 | version_explainable | True |
 
 Version values:
@@ -20,5 +21,5 @@ Version values:
 - codemeta: `0.4.0`
 - pyproject: `0.2.0`
 
-No DOI is claimed. Citation metadata remains DOI pending until a verified
-Zenodo record URL and DOI are available.
+Verified DOI: `10.5281/zenodo.20540532`
+Zenodo record URL: https://zenodo.org/records/20540532

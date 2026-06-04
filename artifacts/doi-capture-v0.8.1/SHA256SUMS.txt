@@ -1,0 +1,2 @@
+f6d8470217ef70233c389c88ab278b8b62a7b797452a0ab78dab9869779220ee  doi-capture-summary.json
+8962ed4afecabd17376595db4641d294540cfab4dfcd55b8f400462a515d05c2  doi-capture-summary.md

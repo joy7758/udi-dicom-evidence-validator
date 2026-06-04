@@ -11,6 +11,7 @@ OUT_MD = ROOT / "artifacts" / "archive-metadata-report-v0.6.md"
 REPOSITORY_URL = "https://github.com/joy7758/udi-dicom-evidence-validator"
 TITLE = "UDI-DICOM Evidence Validator"
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+")
+DOI_CAPTURE_SUMMARY = ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json"
 
 
 def parse_cff(text: str) -> dict[str, Any]:
@@ -36,11 +37,25 @@ def parse_cff(text: str) -> dict[str, Any]:
     return values
 
 
-def contains_claimed_doi(texts: list[str]) -> bool:
+def load_verified_capture() -> dict[str, str] | None:
+    if not DOI_CAPTURE_SUMMARY.exists():
+        return None
+    data = json.loads(DOI_CAPTURE_SUMMARY.read_text(encoding="utf-8"))
+    doi = str(data.get("doi", ""))
+    record_url = str(data.get("record_url", ""))
+    if data.get("status") != "REAL_DOI_VERIFIED":
+        return None
+    if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+        return None
+    if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
+        return None
+    return {"doi": doi, "record_url": record_url}
+
+
+def unverified_dois(texts: list[str], allowed: set[str]) -> list[str]:
     combined = "\n".join(texts)
-    allowed = {"10.5063/schema/codemeta-2.0"}
     matches = {match.group(0).rstrip(".") for match in DOI_PATTERN.finditer(combined)}
-    return bool(matches - allowed)
+    return sorted(matches - allowed)
 
 
 def build_report() -> dict[str, Any]:
@@ -48,11 +63,18 @@ def build_report() -> dict[str, Any]:
     codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
     cff_text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     cff = parse_cff(cff_text)
+    capture = load_verified_capture()
+    assigned_doi = capture["doi"] if capture else None
+    record_url = capture["record_url"] if capture else None
+    allowed_dois = {"10.5063/schema/codemeta-2.0"}
+    if assigned_doi:
+        allowed_dois.add(assigned_doi)
     texts = [
         json.dumps(zenodo, sort_keys=True),
         json.dumps(codemeta, sort_keys=True),
         cff_text,
     ]
+    unverified = unverified_dois(texts, allowed_dois)
     codemeta_author = codemeta.get("author", [{}])[0]
     author = (
         f"{codemeta_author.get('givenName', '')} "
@@ -89,21 +111,39 @@ def build_report() -> dict[str, Any]:
         "author_present": author == "Bin Zhang" and cff_author == "Bin Zhang",
         "version_present": bool(codemeta.get("version")) and bool(cff.get("version")),
         "keyword_overlap": bool(zenodo_keywords & codemeta_keywords & cff_keywords),
-        "doi_not_claimed": not contains_claimed_doi(texts),
+        "doi_not_fabricated": not unverified,
+        "verified_doi_metadata_consistent": (
+            (
+                cff.get("doi") == assigned_doi
+                and cff.get("url") == record_url
+                and codemeta.get("identifier") == assigned_doi
+                and codemeta.get("sameAs") == record_url
+                and zenodo.get("doi") == assigned_doi
+                and zenodo.get("record_url") == record_url
+            )
+            if capture
+            else True
+        ),
         "public_repo_only": True,
         "private_repositories_excluded_from_public_doi": True,
     }
     return {
         "report_version": "v0.6",
         "doi_ready": all(checks.values()),
-        "doi_claimed": False,
-        "assigned_doi": None,
+        "doi_claimed": bool(capture),
+        "assigned_doi": assigned_doi,
+        "zenodo_record_url": record_url,
+        "unverified_dois": unverified,
         "title": TITLE,
         "repository_url": REPOSITORY_URL,
         "license": "MIT",
         "codemeta_version": codemeta.get("version"),
         "citation_cff_version": cff.get("version"),
-        "archive_service_status": "ready_for_zenodo_or_archive_service_review",
+        "archive_service_status": (
+            "zenodo_record_verified"
+            if capture
+            else "ready_for_zenodo_or_archive_service_review"
+        ),
         "boundary": [
             "public validator only",
             "no PHI",
@@ -122,7 +162,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         "# Archive Metadata Report v0.6",
         "",
         f"DOI-ready: `{report['doi_ready']}`",
-        "Assigned DOI: none claimed",
+        f"Assigned DOI: {report['assigned_doi'] or 'none claimed'}",
+        f"Zenodo record URL: {report.get('zenodo_record_url') or 'none'}",
         "",
         "| Check | Status |",
         "| --- | --- |",

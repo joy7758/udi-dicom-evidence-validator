@@ -8,9 +8,11 @@ authors:
 date-released: "2026-06-04"
 license: "MIT"
 repository-code: "https://github.com/joy7758/udi-dicom-evidence-validator"
+doi: "10.5281/zenodo.20540532"
+url: "https://zenodo.org/records/20540532"
 keywords:
   - "UDI-DICOM"
   - "evidence manifest"
   - "medical-device imaging workflow"
   - "synthetic validation fixture"
-notes: "DOI-ready metadata only; no DOI is claimed until an archive service assigns one."
+notes: "Verified Zenodo DOI for the public validator archive only. Private suite and private service assets are excluded."

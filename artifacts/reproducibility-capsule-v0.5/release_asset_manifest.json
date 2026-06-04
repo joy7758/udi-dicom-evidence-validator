@@ -22,14 +22,14 @@
       "sha256": "8287c3a5ea75211d545152d07e0e23ba233891e82e021ed15ba8e9573a175b19"
     },
     {
-      "bytes": 9143,
+      "bytes": 10014,
       "path": "artifacts/public-release/README.md",
-      "sha256": "8ad7afcf53d4459b689ce4f0c5f798537b4730203d77e0eeb0a1456f5c97a38f"
+      "sha256": "42fcb2901c31b1d905d1c6842bdf12813a9a145df0d84af822854a08122abfce"
     },
     {
       "bytes": 6229,
       "path": "artifacts/public-release/SHA256SUMS.txt",
-      "sha256": "bf3a5ad6c49a32fe21781c6d7614e6b2ecb61409dba6b19d39ac2f50087b8753"
+      "sha256": "40a49a75bf48799b85c3ee35f3b99a6e6ac95865ee2ae6e1b45b9e3b08bece2c"
     },
     {
       "bytes": 3404,
@@ -327,9 +327,9 @@
       "sha256": "54a8c9f8ad4d30a246f079d0b183a03f92f3ff7d5e8b64fe1d33a8931a8bde91"
     },
     {
-      "bytes": 84123,
+      "bytes": 84994,
       "path": "artifacts/public-release/udi-dicom-evidence-validator-public-worktree-source.zip",
-      "sha256": "d099b6b79261cee3eb86a7c38bcdb6b90a67eca374c85b23430d83972e21a94c"
+      "sha256": "b30eaccae3b1e0592973104982e55f02e9271f4b767043f45ed2e8a6df84230f"
     }
   ],
   "public_only": true,

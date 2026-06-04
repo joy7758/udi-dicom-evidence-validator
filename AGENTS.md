@@ -36,3 +36,12 @@ For v0.4 release hardening work, keep all new automation public-only. Use
 `scripts/clean_clone_smoke.py` for clean clone reproducibility. Do not call
 private repositories, do not include raw DICOM files, and do not claim DOI,
 clinical validation, regulatory approval, or certification.
+
+## v0.5 Paper Review Rule
+
+For v0.5 paper and external review work, keep changes public-only and
+synthetic-only. Use `scripts/build_reproducibility_capsule.py` and
+`scripts/check_reproducibility_capsule.py` for reviewer reproduction material.
+Do not add real samples, raw DICOM files, PHI, private suite content, private
+service workflows, robot operation evidence, clinical validation, regulatory
+approval, certification, or official FDO implementation claims.

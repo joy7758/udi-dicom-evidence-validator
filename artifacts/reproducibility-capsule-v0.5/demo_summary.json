@@ -1,0 +1,8 @@
+{
+  "check_count": 6,
+  "manifest_id": "synthetic-portable-ultrasound-v02-pass-001",
+  "ok": true,
+  "profile_version": "v0.2.0",
+  "receipt": "demo/portable-ultrasound/artifacts_v0.2/receipt.json",
+  "report": "demo/portable-ultrasound/artifacts_v0.2/report.md"
+}

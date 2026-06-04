@@ -21,3 +21,9 @@ Boundary:
 - Archive metadata does not imply certification.
 - Archive metadata does not imply unrestricted access to private suites or
   private service materials.
+
+v0.5 paper review material may be archived as a public software artifact after
+review, but the reproducibility capsule remains a technical reproduction pack.
+It does not claim DOI assignment until an archive service assigns one, and it
+does not imply clinical validation, regulatory approval, certification, or
+official FDO implementation.

@@ -1,0 +1,9 @@
+{
+  "capsule_version": "v0.5",
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "private_material_included": false,
+  "public_only": true,
+  "python": "3.14.5",
+  "raw_dicom_included": false,
+  "repository": "udi-dicom-evidence-validator"
+}

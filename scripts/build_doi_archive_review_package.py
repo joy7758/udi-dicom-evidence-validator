@@ -23,7 +23,15 @@ def sha256(path: Path) -> str:
 
 
 def git_value(args: list[str]) -> str:
-    return subprocess.check_output(["git", *args], cwd=ROOT, text=True).strip()
+    try:
+        return subprocess.check_output(
+            ["git", *args],
+            cwd=ROOT,
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+    except subprocess.CalledProcessError:
+        return "unavailable_in_checkout:" + " ".join(args)
 
 
 def build_manifest(scan: dict[str, Any]) -> dict[str, Any]:

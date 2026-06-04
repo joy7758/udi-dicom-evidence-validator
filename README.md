@@ -1,5 +1,10 @@
 # UDI-DICOM Evidence Validator
 
+<p align="center">
+  <b>Bridging the gap between UDI registry records and DICOM equipment metadata.</b><br>
+  <i>For public, synthetic review of UDI-DICOM evidence-chain consistency across device metadata, PACS/VNA governance, and AI training-data provenance workflows.</i>
+</p>
+
 Minimal public validator for a synthetic UDI-DICOM evidence manifest profile.
 It checks whether DICOM equipment metadata, a manifest, registry evidence, and
 declared artifacts form a deterministic review packet.
@@ -7,6 +12,32 @@ declared artifacts form a deterministic review packet.
 This is not clinical validation, not regulatory approval, not safety assurance,
 not certification, and not a replacement for PACS, VNA, asset management, or
 manufacturer quality systems. Public examples are synthetic and contain no PHI.
+
+## Who Needs This Validator?
+
+This public reference validator is useful when teams need a reproducible,
+software-level review of UDI-DICOM metadata consistency without exposing real
+samples, PHI, raw DICOM, private conformance cases, or service workflows.
+
+**Medical device manufacturers.** Use the synthetic manifest profile and public
+fixtures to check whether expected DICOM UDI macro evidence is represented
+consistently before internal submission-readiness review. This does not
+establish 510(k), NMPA, EU MDR, or other regulatory acceptance.
+
+**Hospital IT and PACS/VNA administrators.** Use deterministic validation
+receipts to reason about metadata consistency patterns that can affect asset
+inventory, migration review, and governance discussions. This does not replace
+PACS, VNA, CMMS, or manufacturer quality systems.
+
+**Medical AI data engineers.** Use the Device UID versus UDI-DI boundary checks
+to audit synthetic metadata provenance assumptions before training-data
+documentation work. This does not validate clinical safety, model performance,
+or real-world data quality.
+
+Technical collaboration is limited to UDI-DICOM metadata mapping review,
+synthetic workflow design, reproducibility checks, and boundary-safe
+documentation. No clinical validation, regulatory approval, certification, PHI
+processing, raw DICOM processing, or private-suite exposure is provided here.
 
 ## Quickstart
 
@@ -17,6 +48,12 @@ python -m pip install -U pip
 pip install -e '.[dev,api]'
 pytest -q
 python demo/portable-ultrasound/run_demo.py
+```
+
+CLI output preview (example: validating a portable ultrasound synthetic manifest)
+
+```text
+PASS manifest_id=synthetic-portable-ultrasound-v02-pass-001 checks=6 report=demo/portable-ultrasound/artifacts_v0.2/report.md
 ```
 
 ## CLI

@@ -3,7 +3,9 @@
     "10.5063/schema/codemeta-2.0"
   ],
   "allowed_verified_dois": [
-    "10.5281/zenodo.20540532"
+    "10.5281/zenodo.20540531",
+    "10.5281/zenodo.20540532",
+    "10.5281/zenodo.20635229"
   ],
   "author": "Bin Zhang",
   "boundary": [
@@ -28,16 +30,17 @@
   },
   "claimed_or_placeholder_dois": [],
   "doi_status": "DOI verified",
+  "latest_capture_summary": "artifacts/doi-capture-v1.0.1-public/doi-capture-summary.json",
   "license": "MIT",
   "ok": true,
   "report_version": "v0.8",
   "repository_url": "https://github.com/joy7758/udi-dicom-evidence-validator",
   "title": "UDI-DICOM Evidence Validator",
-  "verified_doi": "10.5281/zenodo.20540532",
+  "verified_doi": "10.5281/zenodo.20635229",
   "version_values": {
-    "citation_cff": "0.4.0",
-    "codemeta": "0.4.0",
+    "citation_cff": "v1.0.1-public",
+    "codemeta": "v1.0.1-public",
     "pyproject": "0.2.0"
   },
-  "zenodo_record_url": "https://zenodo.org/records/20540532"
+  "zenodo_record_url": "https://zenodo.org/records/20635229"
 }

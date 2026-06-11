@@ -4,7 +4,7 @@
     "10.5063/schema/codemeta-2.0"
   ],
   "doi_policy": "DOI-ready and DOI pending are allowed; real DOI claims require a REAL_DOI_VERIFIED capture summary.",
-  "files_checked": 122,
+  "files_checked": 125,
   "hits": [],
   "ok": true,
   "targets": [
@@ -17,6 +17,8 @@
     ".zenodo.json"
   ],
   "verified_dois": [
-    "10.5281/zenodo.20540532"
+    "10.5281/zenodo.20540531",
+    "10.5281/zenodo.20540532",
+    "10.5281/zenodo.20635229"
   ]
 }

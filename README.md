@@ -233,3 +233,25 @@ This DOI refers to the public validator release archive only. It does not
 include private conformance suite or private sample validation service assets.
 The boundary remains no PHI, no raw DICOM, not clinical validation, not
 regulatory approval, not certification, no fake DOI, and Device UID != UDI-DI.
+
+## v1.0.1-public Verified Zenodo DOI Capture
+
+Version DOI: `10.5281/zenodo.20635229`
+
+Concept DOI: `10.5281/zenodo.20540531`
+
+Zenodo record: https://zenodo.org/records/20635229
+
+GitHub release tag: `v1.0.1-public`
+
+Target commit: `37fdedfc0b6edfbb07432148d1b738f2712a7c8d`
+
+Archive checksum: `md5:f031e65ee9c3c4a0fd62140b2d5b83c2`
+
+This DOI refers to the `v1.0.1-public` public validator archive only. It does
+not include private conformance suite or private sample-validation service
+assets, real samples, PHI, raw DICOM files, vendor private rules, hospital
+identifiers, or non-de-identified DICOM material.
+
+The boundary remains no PHI, no raw DICOM, not clinical validation, not
+regulatory approval, not certification, no fake DOI, and Device UID != UDI-DI.

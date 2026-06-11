@@ -11,7 +11,10 @@ OUT_MD = ROOT / "artifacts" / "archive-metadata-report-v0.6.md"
 REPOSITORY_URL = "https://github.com/joy7758/udi-dicom-evidence-validator"
 TITLE = "UDI-DICOM Evidence Validator"
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+")
-DOI_CAPTURE_SUMMARY = ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json"
+DOI_CAPTURE_SUMMARIES = [
+    ROOT / "artifacts" / "doi-capture-v1.0.1-public" / "doi-capture-summary.json",
+    ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json",
+]
 
 
 def parse_cff(text: str) -> dict[str, Any]:
@@ -37,19 +40,41 @@ def parse_cff(text: str) -> dict[str, Any]:
     return values
 
 
-def load_verified_capture() -> dict[str, str] | None:
-    if not DOI_CAPTURE_SUMMARY.exists():
-        return None
-    data = json.loads(DOI_CAPTURE_SUMMARY.read_text(encoding="utf-8"))
-    doi = str(data.get("doi", ""))
-    record_url = str(data.get("record_url", ""))
-    if data.get("status") != "REAL_DOI_VERIFIED":
-        return None
-    if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
-        return None
-    if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
-        return None
-    return {"doi": doi, "record_url": record_url}
+def load_verified_captures() -> list[dict[str, str]]:
+    captures: list[dict[str, str]] = []
+    for path in DOI_CAPTURE_SUMMARIES:
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        doi = str(data.get("doi", ""))
+        record_url = str(data.get("record_url", ""))
+        if data.get("status") != "REAL_DOI_VERIFIED":
+            continue
+        if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+            continue
+        if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
+            continue
+        captures.append(
+            {
+                "doi": doi,
+                "record_url": record_url,
+                "concept_doi": str(data.get("concept_doi", "")),
+                "previous_verified_version_doi": str(
+                    data.get("previous_verified_version_doi", "")
+                ),
+            }
+        )
+    return captures
+
+
+def allowed_capture_dois(captures: list[dict[str, str]]) -> set[str]:
+    allowed: set[str] = set()
+    for capture in captures:
+        for key in ["doi", "concept_doi", "previous_verified_version_doi"]:
+            doi = capture.get(key, "")
+            if re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+                allowed.add(doi)
+    return allowed
 
 
 def unverified_dois(texts: list[str], allowed: set[str]) -> list[str]:
@@ -63,12 +88,11 @@ def build_report() -> dict[str, Any]:
     codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
     cff_text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     cff = parse_cff(cff_text)
-    capture = load_verified_capture()
+    captures = load_verified_captures()
+    capture = captures[0] if captures else None
     assigned_doi = capture["doi"] if capture else None
     record_url = capture["record_url"] if capture else None
-    allowed_dois = {"10.5063/schema/codemeta-2.0"}
-    if assigned_doi:
-        allowed_dois.add(assigned_doi)
+    allowed_dois = {"10.5063/schema/codemeta-2.0"} | allowed_capture_dois(captures)
     texts = [
         json.dumps(zenodo, sort_keys=True),
         json.dumps(codemeta, sort_keys=True),

@@ -13,7 +13,10 @@ REPOSITORY_URL = "https://github.com/joy7758/udi-dicom-evidence-validator"
 TITLE = "UDI-DICOM Evidence Validator"
 ALLOWED_DOIS = {"10.5063/schema/codemeta-2.0"}
 DOI_PATTERN = re.compile(r"\b10\.\d{4,9}/[-._;()/:A-Za-z0-9]+")
-DOI_CAPTURE_SUMMARY = ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json"
+DOI_CAPTURE_SUMMARIES = [
+    ROOT / "artifacts" / "doi-capture-v1.0.1-public" / "doi-capture-summary.json",
+    ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json",
+]
 
 
 def parse_cff(text: str) -> dict[str, Any]:
@@ -55,19 +58,49 @@ def parse_cff(text: str) -> dict[str, Any]:
     return values
 
 
+def load_verified_captures() -> list[dict[str, str]]:
+    captures: list[dict[str, str]] = []
+    for path in DOI_CAPTURE_SUMMARIES:
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        doi = str(data.get("doi", ""))
+        record_url = str(data.get("record_url", ""))
+        if data.get("status") != "REAL_DOI_VERIFIED":
+            continue
+        if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+            continue
+        if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
+            continue
+        captures.append(
+            {
+                "doi": doi,
+                "record_url": record_url,
+                "summary": str(path.relative_to(ROOT)),
+                "concept_doi": str(data.get("concept_doi", "")),
+                "previous_verified_version_doi": str(
+                    data.get("previous_verified_version_doi", "")
+                ),
+            }
+        )
+    return captures
+
+
+def allowed_capture_dois(captures: list[dict[str, str]]) -> set[str]:
+    dois: set[str] = set()
+    for capture in captures:
+        for key in ["doi", "concept_doi", "previous_verified_version_doi"]:
+            doi = capture.get(key, "")
+            if re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
+                dois.add(doi)
+    return dois
+
+
 def load_verified_capture() -> dict[str, str] | None:
-    if not DOI_CAPTURE_SUMMARY.exists():
+    captures = load_verified_captures()
+    if not captures:
         return None
-    data = json.loads(DOI_CAPTURE_SUMMARY.read_text(encoding="utf-8"))
-    doi = str(data.get("doi", ""))
-    record_url = str(data.get("record_url", ""))
-    if data.get("status") != "REAL_DOI_VERIFIED":
-        return None
-    if not re.fullmatch(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", doi):
-        return None
-    if not re.fullmatch(r"https://(www\.)?zenodo\.org/records/\d+", record_url):
-        return None
-    return {"doi": doi, "record_url": record_url}
+    return captures[0]
 
 
 def claimed_dois(texts: list[str], allowed_dois: set[str]) -> list[str]:
@@ -81,12 +114,11 @@ def build_report() -> dict[str, Any]:
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
     zenodo = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
-    capture = load_verified_capture()
+    captures = load_verified_captures()
+    capture = captures[0] if captures else None
     verified_doi = capture["doi"] if capture else None
     verified_record_url = capture["record_url"] if capture else None
-    allowed_dois = set(ALLOWED_DOIS)
-    if verified_doi:
-        allowed_dois.add(verified_doi)
+    allowed_dois = set(ALLOWED_DOIS) | allowed_capture_dois(captures)
     cff_text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
     docs_text = (ROOT / "docs" / "citation-and-archiving.md").read_text(encoding="utf-8")
@@ -172,6 +204,7 @@ def build_report() -> dict[str, Any]:
         "claimed_or_placeholder_dois": doi_hits,
         "allowed_doi_references": sorted(ALLOWED_DOIS),
         "allowed_verified_dois": sorted(allowed_dois - ALLOWED_DOIS),
+        "latest_capture_summary": capture.get("summary") if capture else None,
         "boundary": [
             "public validator only",
             "no PHI",

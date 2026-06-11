@@ -8,6 +8,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 VERIFIED_DOI_SUMMARIES = [
+    ROOT / "artifacts" / "doi-capture-v1.0.1-public" / "doi-capture-summary.json",
     ROOT / "artifacts" / "doi-capture-v0.8.1" / "doi-capture-summary.json",
 ]
 DEFAULT_TARGETS = [
@@ -68,9 +69,16 @@ def verified_dois() -> set[str]:
         if not path.exists():
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
-        doi = str(data.get("doi", ""))
-        if data.get("status") == "REAL_DOI_VERIFIED" and DOI_PATTERN.fullmatch(doi):
-            dois.add(doi)
+        if data.get("status") != "REAL_DOI_VERIFIED":
+            continue
+        for key in [
+            "doi",
+            "concept_doi",
+            "previous_verified_version_doi",
+        ]:
+            doi = str(data.get(key, ""))
+            if DOI_PATTERN.fullmatch(doi):
+                dois.add(doi)
     return dois
 
 

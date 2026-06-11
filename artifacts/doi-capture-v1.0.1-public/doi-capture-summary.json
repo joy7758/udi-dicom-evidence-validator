@@ -1,0 +1,61 @@
+{
+  "status": "REAL_DOI_VERIFIED",
+  "capture_scope": "public_validator_archive_only",
+  "repository": "joy7758/udi-dicom-evidence-validator",
+  "release_tag": "v1.0.1-public",
+  "release_published_at": "2026-06-11T01:19:19Z",
+  "annotated_tag_object": "9c5eb67a0b4155385ebcfcbd110b6e28be43d070",
+  "tag_target_commit": "37fdedfc0b6edfbb07432148d1b738f2712a7c8d",
+  "github_release_url": "https://github.com/joy7758/udi-dicom-evidence-validator/releases/tag/v1.0.1-public",
+  "zenodo_record_id": 20635229,
+  "record_url": "https://zenodo.org/records/20635229",
+  "doi": "10.5281/zenodo.20635229",
+  "doi_url": "https://doi.org/10.5281/zenodo.20635229",
+  "concept_doi": "10.5281/zenodo.20540531",
+  "concept_doi_url": "https://doi.org/10.5281/zenodo.20540531",
+  "zenodo_version": "v1.0.1-public",
+  "zenodo_status": "published",
+  "zenodo_state": "done",
+  "archive_file": "joy7758/udi-dicom-evidence-validator-v1.0.1-public.zip",
+  "archive_checksum": "md5:f031e65ee9c3c4a0fd62140b2d5b83c2",
+  "previous_verified_version_doi": "10.5281/zenodo.20540532",
+  "previous_verified_record_url": "https://zenodo.org/records/20540532",
+  "verification": {
+    "github_release_present": true,
+    "doi_redirect_final_url": "https://zenodo.org/records/20635229",
+    "doi_redirect_http_status": 200,
+    "record_page_contains_doi": true,
+    "record_version_matches_release_tag": true
+  },
+  "excluded_assets": [
+    "private conformance suite",
+    "private sample-validation service",
+    "real samples",
+    "PHI",
+    "raw DICOM files",
+    "vendor private rules",
+    "hospital identifiers",
+    "non-de-identified DICOM material"
+  ],
+  "non_claims": [
+    "not clinical validation",
+    "not regulatory approval",
+    "not safety certification",
+    "not legal compliance",
+    "not production deployment",
+    "not official FDO conformance"
+  ],
+  "boundary": {
+    "public_only_archive": true,
+    "private_suite_excluded": true,
+    "private_service_excluded": true,
+    "no_phi": true,
+    "no_raw_dicom": true,
+    "not_clinical_validation": true,
+    "not_regulatory_approval": true,
+    "not_certification": true,
+    "not_safety_certification": true,
+    "no_fake_doi": true,
+    "device_uid_not_udi_di": true
+  }
+}

@@ -7,9 +7,9 @@
       "sha256": "c6114f52270843fbbffc6afd81977a1085b0c1f08aa5a8319c393d7b4050f420"
     },
     {
-      "bytes": 655,
+      "bytes": 661,
       "path": "artifacts/public-release/CITATION.cff",
-      "sha256": "e822b081534cf6accb917d52590a48e4971f8aa5a5fa5c5ec38aee8028df6fd8"
+      "sha256": "6775234c10fd19d9601bbaed7a601783af280520cfd0f79dc6154c5a3c07447e"
     },
     {
       "bytes": 42,
@@ -22,14 +22,14 @@
       "sha256": "8287c3a5ea75211d545152d07e0e23ba233891e82e021ed15ba8e9573a175b19"
     },
     {
-      "bytes": 10014,
+      "bytes": 10777,
       "path": "artifacts/public-release/README.md",
-      "sha256": "42fcb2901c31b1d905d1c6842bdf12813a9a145df0d84af822854a08122abfce"
+      "sha256": "18193cab162a29ec4bc964ab0936f014fa99450783573ba81fce8aa3da57393e"
     },
     {
       "bytes": 6229,
       "path": "artifacts/public-release/SHA256SUMS.txt",
-      "sha256": "40a49a75bf48799b85c3ee35f3b99a6e6ac95865ee2ae6e1b45b9e3b08bece2c"
+      "sha256": "456a0bdea31c6eec557dea6fca3b1e0bb45411435d953e81bebeb507cc5cd578"
     },
     {
       "bytes": 3404,
@@ -37,14 +37,14 @@
       "sha256": "ef71eb1334acb4324a2d148926f0f9f61172261f8343e6fc7f64bc748e09ddab"
     },
     {
-      "bytes": 1011,
+      "bytes": 1019,
       "path": "artifacts/public-release/codemeta.json",
-      "sha256": "cc454f6b20b365c8991ce1053431d09682f1b499b087178711afa31c6bc08aea"
+      "sha256": "9bd431487f0f493c9b424374c195852ea115764e6dbb7c0826a0839d2306eeca"
     },
     {
-      "bytes": 2159,
+      "bytes": 2854,
       "path": "artifacts/public-release/docs/citation-and-archiving.md",
-      "sha256": "8bcf06604e429c55bc3dbfadfc8ea11c69100b7f67367f4cc213b9736bdce1e6"
+      "sha256": "c227d11ad691125b575235f743cd884cead41b1d32b8f3d9208bbdbf05db5f32"
     },
     {
       "bytes": 545,
@@ -327,9 +327,9 @@
       "sha256": "54a8c9f8ad4d30a246f079d0b183a03f92f3ff7d5e8b64fe1d33a8931a8bde91"
     },
     {
-      "bytes": 84994,
+      "bytes": 86466,
       "path": "artifacts/public-release/udi-dicom-evidence-validator-public-worktree-source.zip",
-      "sha256": "b30eaccae3b1e0592973104982e55f02e9271f4b767043f45ed2e8a6df84230f"
+      "sha256": "8484c7b34ace47950a32021a10d86446a542cdae7df3e5935aab3f3ed36c3444"
     }
   ],
   "public_only": true,

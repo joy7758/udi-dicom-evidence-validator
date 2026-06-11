@@ -17,9 +17,9 @@ DOI status: `DOI verified`
 
 Version values:
 
-- citation_cff: `0.4.0`
-- codemeta: `0.4.0`
+- citation_cff: `v1.0.1-public`
+- codemeta: `v1.0.1-public`
 - pyproject: `0.2.0`
 
-Verified DOI: `10.5281/zenodo.20540532`
-Zenodo record URL: https://zenodo.org/records/20540532
+Verified DOI: `10.5281/zenodo.20635229`
+Zenodo record URL: https://zenodo.org/records/20635229

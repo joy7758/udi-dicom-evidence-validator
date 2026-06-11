@@ -1,9 +1,10 @@
 # Citation And Archiving
 
-This repository has a verified Zenodo DOI for the public validator archive:
+This repository has a Zenodo DOI for the latest public validator archive:
 
-- DOI: `10.5281/zenodo.20540532`
-- Zenodo record: https://zenodo.org/records/20540532
+- Exact-version DOI: `10.5281/zenodo.20635229`
+- Zenodo record: https://zenodo.org/records/20635229
+- Concept DOI: `10.5281/zenodo.20540531`
 
 Archive metadata is maintained through `CITATION.cff`, `codemeta.json`, and
 `.zenodo.json`.
@@ -46,3 +47,15 @@ the DOI URL resolved to the matching Zenodo record page. The DOI applies only to
 the public validator archive. It does not include private conformance suite or
 private sample validation service materials, and it does not imply clinical
 validation, regulatory approval, certification, or PHI processing.
+
+v1.0.1-public captures the current exact-version Zenodo DOI after the
+`v1.0.1-public` GitHub Release was archived by Zenodo. Use
+`10.5281/zenodo.20635229` when citing the exact `v1.0.1-public` archive. Use
+the concept DOI `10.5281/zenodo.20540531` when citing the software series. The
+prior DOI `10.5281/zenodo.20540532` remains a historical DOI for
+`v0.8.1-public`; it is not the current latest archive DOI.
+
+The v1.0.1-public DOI capture is metadata-only. It does not change validator
+behavior, schema behavior, CLI behavior, API behavior, public example
+semantics, receipt semantics, DICOM extraction logic, or registry validation
+logic.

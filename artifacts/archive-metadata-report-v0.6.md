@@ -1,8 +1,8 @@
 # Archive Metadata Report v0.6
 
 DOI-ready: `True`
-Assigned DOI: 10.5281/zenodo.20540532
-Zenodo record URL: https://zenodo.org/records/20540532
+Assigned DOI: 10.5281/zenodo.20635229
+Zenodo record URL: https://zenodo.org/records/20635229
 
 | Check | Status |
 | --- | --- |

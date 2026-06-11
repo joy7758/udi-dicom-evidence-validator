@@ -1,8 +1,8 @@
 {
   "title": "UDI-DICOM Evidence Validator",
   "upload_type": "software",
-  "doi": "10.5281/zenodo.20540532",
-  "record_url": "https://zenodo.org/records/20540532",
+  "doi": "10.5281/zenodo.20635229",
+  "record_url": "https://zenodo.org/records/20635229",
   "description": "Public reference validator for synthetic UDI-DICOM evidence manifest workflows.",
   "creators": [
     {
@@ -24,7 +24,17 @@
       "identifier": "https://github.com/joy7758/udi-dicom-evidence-validator",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.20540531",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/joy7758/udi-dicom-evidence-validator/releases/tag/v1.0.1-public",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     }
   ],
-  "notes": "Verified Zenodo DOI for the public validator archive only. This software does not provide clinical validation, regulatory approval, certification, or PHI processing. Private suite and private service assets are excluded."
+  "notes": "Zenodo DOI for the v1.0.1-public validator archive only. This software does not provide clinical validation, regulatory approval, certification, or PHI processing. Private suite and private service assets are excluded."
 }

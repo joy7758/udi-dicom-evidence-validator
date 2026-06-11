@@ -1,18 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this synthetic UDI-DICOM evidence validator, cite it as below."
 title: "UDI-DICOM Evidence Validator"
-version: "0.4.0"
+version: "v1.0.1-public"
 authors:
   - family-names: "Zhang"
     given-names: "Bin"
-date-released: "2026-06-04"
+date-released: "2026-06-11"
 license: "MIT"
 repository-code: "https://github.com/joy7758/udi-dicom-evidence-validator"
-doi: "10.5281/zenodo.20540532"
-url: "https://zenodo.org/records/20540532"
+doi: "10.5281/zenodo.20635229"
+url: "https://zenodo.org/records/20635229"
 keywords:
   - "UDI-DICOM"
   - "evidence manifest"
   - "medical-device imaging workflow"
   - "synthetic validation fixture"
-notes: "Verified Zenodo DOI for the public validator archive only. Private suite and private service assets are excluded."
+notes: "Zenodo DOI for the v1.0.1-public validator archive only. Private suite and private service assets are excluded."

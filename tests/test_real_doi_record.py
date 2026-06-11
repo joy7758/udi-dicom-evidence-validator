@@ -18,5 +18,6 @@ def test_real_doi_record() -> None:
     payload = json.loads(result.stdout)
     assert payload["ok"] is True
     assert payload["status"] == "REAL_DOI_VERIFIED"
-    assert payload["doi"] == "10.5281/zenodo.20540532"
-    assert payload["record_url"] == "https://zenodo.org/records/20540532"
+    assert payload["doi"] == "10.5281/zenodo.20635229"
+    assert payload["record_url"] == "https://zenodo.org/records/20635229"
+    assert payload["concept_doi"] == "10.5281/zenodo.20540531"

@@ -1,3 +1,5 @@
+> **Moved:** this repository has been merged into [joy7758/udi-dicom-conformance-suite](https://github.com/joy7758/udi-dicom-conformance-suite/tree/main/udi-dicom-evidence-validator) with full history. This repo is archived and read-only.
+
 # UDI-DICOM Evidence Validator
 
 <p align="center">
